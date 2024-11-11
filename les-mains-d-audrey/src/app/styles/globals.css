@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fonts declarations */
+@font-face {
+	font-family: 'Jaldi-Regular';
+	src: url('/fonts/Jaldi-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+  }
+
+  @font-face {
+	font-family: 'Italiana-Regular';
+	src: url('/fonts/Italiana-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+  }
+
+  @font-face {
+	font-family: 'BrittanySignature';
+	src: url('/fonts/BrittanySignature.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+  }
+
+h1 {
+	color: #BD8334;
+	text-align: center;
+}
+
+h2 {
+	color: #D25D8F;
+	text-align: center;
+}
