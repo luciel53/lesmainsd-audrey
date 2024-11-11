@@ -11,14 +11,14 @@ export default function Header() {
   };
 
   return (
-    <header className="flex flex-row justify-between font-italiana text-xl">
+    <header className="flex flex-row justify-between font-italiana text-2xl">
       <div>
         <Image
           src="/images/logo.png"
           alt="logo les mains d'Audrey"
           width={400}
           height={400}
-          className="h-24 w-24"
+          className="h-24 w-24 md:h-32 md:w-32"
         />
       </div>
 
