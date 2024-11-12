@@ -24,10 +24,12 @@ module.exports = {
         justify: 'justify',
       },
       backgroundImage: {
-        background: "url('/images/baby-hand.jpg')",
+        background: "url('/images/baby-hand-opacity.jpg')",
       },
 
     },
   },
-  plugins: [],
+  plugins: [
+    require("tailwindcss-animated"),
+  ],
 };

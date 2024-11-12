@@ -1,3 +1,7 @@
-export default function Services() {
-    return <h1>À propos de nous</h1>;
+export default function Prestations() {
+    return (
+        <div>
+            <h1 className="font-brittany text-6xl">Prestations</h1>
+        </div>
+    )
 }
