@@ -23,6 +23,10 @@ module.exports = {
       textAlign: {
         justify: 'justify',
       },
+      backgroundImage: {
+        background: "url('/images/baby-hand.jpg')",
+      },
+
     },
   },
   plugins: [],
