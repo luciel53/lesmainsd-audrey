@@ -21,7 +21,7 @@ export default function Accordion({ title, children, isFirst }) {
             : " border border-lightPink"
         } ${isFirst ? "" : "border-t-0"}`}
       >
-        <span>{title}</span>
+        <span className="font-jaldi md:text-xl">{title}</span>
         <span>
           <Image
             src="/images/icons/add.png"
@@ -35,13 +35,13 @@ export default function Accordion({ title, children, isFirst }) {
       {isOpen && (
         <div className="flex flex-row justify-between w-80 md:w-[60%] lg:w-[40%] bg-lightBG border-x border-b border-lightPink px-4 py-2">
           <div className=" w-44 md:w-72 lg:w-[68%] whitespace-break-spaces break-words">
-            <p className="">
+            <p className="font-jaldi italic md:text-xl">
             {children}
             </p>
           </div>
           <div className=" self-center">
             <Link href="/services">
-            <button className="text-gold w-24 md:mr-4 lg:mr-4 border border-gold rounded-full px-2">En savoir +</button>
+            <button className="text-gold font-jaldi w-24 md:mr-4 lg:mr-4 drop-shadow-lg border border-gold rounded-full px-2 hover:text-lightBG hover:bg-gold hover:opacity-90 transition duration-300 ease-in-out">En savoir +</button>
             </Link>
           </div>
         </div>

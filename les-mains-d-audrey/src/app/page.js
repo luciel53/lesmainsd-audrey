@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Accordion from "./components/Accordion";
+import Button from "./components/Button";
 
 export default function Home() {
   return (
@@ -35,6 +36,9 @@ export default function Home() {
         title="Ateliers en entreprise sur la culture sourde"
         children="COUCOUUUUUUUUUUUUUUUUUUUUUUUUU"
         />
+      </div>
+      <div className="flex flex-row justify-center mt-10 mb-10 ">
+      <Button btnText="Découvrez les ateliers" />
       </div>
     </div>
   );
