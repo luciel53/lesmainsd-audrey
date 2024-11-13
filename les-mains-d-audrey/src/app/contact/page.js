@@ -3,7 +3,7 @@ import Button from "../components/Button";
 
 export default function Event() {
   return (
-    <div>
+    <div className="mb-8 md:mb-16">
       <h1 className="font-brittany text-4xl md:text-5xl lg:text-6xl mb-6 md:mb-8 lg:mb-12">
         Contactez-moi
       </h1>

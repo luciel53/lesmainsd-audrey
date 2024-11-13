@@ -21,20 +21,20 @@ export default function Home() {
       <div>
         <Accordion
         title="Ateliers bébé signe en individuel"
-        children="Je vous propose des ateliers Bébé Signe à votre domicile."
+        children="Je vous propose des ateliers Bébé Signe à votre domicile. Pour une famille."
         isFirst={true}
         />
         <Accordion
         title="Ateliers bébé signe en collectif "
-        children="COUCOUUUUUUUUUUUUUUUfffffffffffffffffffffffffffffffffffffffffffffffffffffffffUUUUUUUUUU"
+        children="Ateliers Bébé Signe à votre domicile, mais à plusieurs familles (3 familles maximum)."
         />
         <Accordion
-        title="Ateliers bébé signe en collectivité (crèches, bibliothèques....)"
-        children="COUCOUUUUUUUUUUUUUUUUUUUUUUUUU"
+        title="Ateliers bébé signe en collectivité (bibliothèques, écoles, crèches...)"
+        children="J'organise des contes signés, ateliers à thèmes dans les collectivités."
         />
         <Accordion
         title="Ateliers en entreprise sur la culture sourde"
-        children="COUCOUUUUUUUUUUUUUUUUUUUUUUUUU"
+        children="J'interviens dans les entreprises pour sensibiliser les gens sur la culture sourde."
         />
       </div>
       <div className="flex flex-row justify-center mt-10 mb-10 ">
