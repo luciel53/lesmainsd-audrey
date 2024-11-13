@@ -14,6 +14,7 @@ module.exports = {
         pink: "#D25D8F",
         lightPink: "#DF9AC5",
         veryLightPink: "#fce3d7",
+        lightBG: "#F3F2F0",
       },
       fontFamily: {
         brittany: ['BrittanySignature', 'serif'],
