@@ -2,8 +2,8 @@ import Button from "./Button";
 
 export default function PrestationsCard({ title, text }) {
   return (
-    <div className="flex flex-col bg-lightBG border border-lightPink rounded-xl w-96 h-96 justify-between mt-4 drop-shadow-sm">
-      <h3 className="text-center font-italiana text-pink md:text-2xl mt-2">
+    <div className="flex flex-col bg-lightBG border border-lightPink rounded-3xl h-96 justify-between md:justify-between mt-1 drop-shadow-sm transition-transform duration-200 ease-in-out hover:scale-105 hover:drop-shadow-lg">
+      <h3 className="text-center font-italiana text-pink w-60 mx-auto text-2xl md:text-3xl mt-2">
         {title}
       </h3>
 
