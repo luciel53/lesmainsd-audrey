@@ -61,8 +61,8 @@ export default function Header() {
             {menuItems.map((item) => (
               <Link href={item.href} key={item.href}>
                 <li
-                  className={`md:mr-8 relative flex flex-col items-center hover:opacity-100 ${
-                    pathname === item.href ? "opacity-70" : "opacity-100"
+                  className={`md:mr-8 relative flex flex-col items-center hover:opacity-60 ${
+                    pathname === item.href ? "opacity-80" : "opacity-100"
                   }`}
                 >
                   {item.label}
