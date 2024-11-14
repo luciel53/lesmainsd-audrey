@@ -7,14 +7,14 @@ export default function Event() {
       <h1 className="font-brittany text-4xl md:text-5xl lg:text-6xl mb-6 md:mb-8 lg:mb-12">
         Contactez-moi
       </h1>
-      <div className="flex flex-wrap-reverse font-jaldi lg:flex-row justify-evenly">
-        <div>
+      <div className="flex flex-wrap-reverse font-jaldi md:text-xl lg:flex-row justify-evenly mx-40">
+        <div className="md:mt-8 mx-4">
           <Image
             src="/images/logo.png"
             alt="Logo de les mains d'Audrey"
             width={400}
             height={400}
-            className=" w-[60%] md:w-[100%] mx-auto drop-shadow-lg"
+            className=" w-[60%] md:w-[60%] mx-auto drop-shadow-lg"
           />
           <p>Les mains d'Audrey</p>
           <p>Facilitatrice de liens Parents-enfant</p>
@@ -44,7 +44,7 @@ export default function Event() {
           </div>
         </div>
         {/* Form */}
-        <div className="mt-12 font-jaldi">
+        <div className="mt-12">
           <form action="#" method="POST" className="font-jaldi">
             {/* Champ Nom */}
             <div className="mb-4">
@@ -54,7 +54,7 @@ export default function Event() {
                 name="name"
                 required
                 placeholder="Nom"
-                className=" w-80 md:w-96 py-1.5 px-2 border border-lightPink focus:outline-none placeholder-pink focus:ring-2 focus:ring-pink text-pink placeholder-pink-500"
+                className=" w-80 md:w-[120%] py-1.5 px-2 border border-lightPink focus:outline-none placeholder-pink focus:ring-2 focus:ring-pink text-pink placeholder-pink-500"
               />
             </div>
 
@@ -66,7 +66,7 @@ export default function Event() {
                 name="email"
                 required
                 placeholder="Email"
-                className=" w-80 md:w-96 py-1.5 px-2 border border-lightPink focus:outline-none placeholder-pink focus:ring-2 focus:ring-pink text-pink placeholder-pink-500 font-normal"
+                className=" w-80 md:w-[120%] py-1.5 px-2 border border-lightPink focus:outline-none placeholder-pink focus:ring-2 focus:ring-pink text-pink placeholder-pink-500 font-normal"
               />
             </div>
 
@@ -78,7 +78,7 @@ export default function Event() {
                 name="subject"
                 required
                 placeholder="Sujet"
-                className=" w-80 md:w-96 py-1.5 px-2 border border-lightPink focus:outline-none placeholder-pink focus:ring-2 focus:ring-pink text-pink placeholder-pink-500 font-normal"
+                className=" w-80 md:w-[120%] py-1.5 px-2 border border-lightPink focus:outline-none placeholder-pink focus:ring-2 focus:ring-pink text-pink placeholder-pink-500 font-normal"
               />
             </div>
 
@@ -89,7 +89,7 @@ export default function Event() {
                 id="phone"
                 name="phone"
                 placeholder="Numéro de téléphone"
-                className=" w-80 md:w-96 py-1.5 px-2 border border-lightPink focus:outline-none placeholder-pink focus:ring-2 focus:ring-pink text-pink placeholder-pink-500 font-normal"
+                className=" w-80 md:w-[120%] py-1.5 px-2 border border-lightPink focus:outline-none placeholder-pink focus:ring-2 focus:ring-pink text-pink placeholder-pink-500 font-normal"
               />
             </div>
 
@@ -101,7 +101,7 @@ export default function Event() {
                 rows="4"
                 required
                 placeholder="Message"
-                className=" w-80 md:w-96 py-1.5 px-2 border border-lightPink focus:outline-none placeholder-pink focus:ring-2 focus:ring-pink text-pink placeholder-pink-500 font-normal"
+                className=" w-80 md:w-[120%] py-1.5 px-2 border border-lightPink focus:outline-none placeholder-pink focus:ring-2 focus:ring-pink text-pink placeholder-pink-500 font-normal"
               ></textarea>
             </div>
 
@@ -114,7 +114,7 @@ export default function Event() {
                 required
                 className="mr-2 "
               />
-              <label htmlFor="consent" className="text-sm text-gray-700">
+              <label htmlFor="consent" className="text-sm text-gray-700 text-justify">
                 En soumettant ce formulaire, j'accepte que mes données soient
                 collectées et traitées dans le cadre de ma demande. Ces
                 informations ne seront utilisées que pour répondre à votre
@@ -123,7 +123,7 @@ export default function Event() {
               </label>
             </div>
 
-            {/* Bouton Envoyer */}
+            {/* Sender button */}
             <div className="flex justify-center">
               <Button btnText="Envoyer" />
             </div>
