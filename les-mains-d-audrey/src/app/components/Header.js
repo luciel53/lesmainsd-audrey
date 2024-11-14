@@ -3,9 +3,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  const menuItems = [
+    { href: "/", label: "Accueil" },
+    { href: "/services", label: "Prestations" },
+    { href: "/about", label: "À propos" },
+    { href: "/evenements", label: "Évènements" },
+    { href: "/contact", label: "Contact" },
+  ];
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -48,21 +58,27 @@ export default function Header() {
           } md:block  absolute z-30 right-0 top-20 md:top-0 bg-veryLightPink md:bg-transparent p-5 md:p-8 rounded-l-3xl`}
         >
           <ul className="flex flex-col md:flex-row text-pink">
-            <Link href="/">
-              <li className="md:mr-8 hover:opacity-70">Accueil</li>
-            </Link>
-            <Link href="/services">
-              <li className="md:mr-8 hover:opacity-70">Prestations</li>
-            </Link>
-            <Link href="/about">
-              <li className="md:mr-8 hover:opacity-70">À propos</li>
-            </Link>
-            <Link href="/evenements">
-              <li className="md:mr-8 hover:opacity-70">Évènements</li>
-            </Link>
-            <Link href="/contact">
-              <li className="hover:opacity-70">Contact</li>
-            </Link>
+            {menuItems.map((item) => (
+              <Link href={item.href} key={item.href}>
+                <li
+                  className={`md:mr-8 relative flex flex-col items-center hover:opacity-100 ${
+                    pathname === item.href ? "opacity-70" : "opacity-100"
+                  }`}
+                >
+                  {item.label}
+                  {/* hands heart icon */}
+                  <Image
+                    src="/images/icons/hands-heart.png"
+                    alt="Icône de survol"
+                    width={40}
+                    height={40}
+                    className={`md:-mt-2 transition-opacity duration-300 ${
+                      pathname === item.href ? "opacity-100" : "opacity-0 group-hover:opacity-0"
+                    }`}
+                  />
+                </li>
+              </Link>
+            ))}
           </ul>
         </nav>
       </div>
