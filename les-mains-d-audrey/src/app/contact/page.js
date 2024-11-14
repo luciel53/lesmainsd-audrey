@@ -7,20 +7,21 @@ export default function Event() {
       <h1 className="font-brittany text-4xl md:text-5xl lg:text-6xl mb-6 md:mb-8 lg:mb-12">
         Contactez-moi
       </h1>
-      <div className="flex flex-row justify-evenly">
+      <div className="flex flex-wrap-reverse font-jaldi lg:flex-row justify-evenly">
         <div>
           <Image
             src="/images/logo.png"
             alt="Logo de les mains d'Audrey"
             width={400}
             height={400}
+            className=" w-[60%] md:w-[100%] mx-auto drop-shadow-lg"
           />
           <p>Les mains d'Audrey</p>
           <p>Facilitatrice de liens Parents-enfant</p>
           <p>lesmainsdaudrey44@gmail.com</p>
           <p>Saint-Nazaire (et alentours)</p>
           <p>SMS : 06 75 34 08 67</p>
-          <p>Rejoignez-moi sur les réseaux sociaux:</p>
+          <p>Retrouvez-moi sur les réseaux sociaux:</p>
           <div className="flex flex-row w-72 mt-2 justify-center">
             <Image
               src="/images/icons/facebook.png"
@@ -43,7 +44,7 @@ export default function Event() {
           </div>
         </div>
         {/* Form */}
-        <div className="mt-12">
+        <div className="mt-12 font-jaldi">
           <form action="#" method="POST" className="font-jaldi">
             {/* Champ Nom */}
             <div className="mb-4">
@@ -53,7 +54,7 @@ export default function Event() {
                 name="name"
                 required
                 placeholder="Nom"
-                className="w-96 py-1.5 px-2 border border-lightPink focus:outline-none focus:ring-2 focus:ring-pink text-pink placeholder-pink-500 font-bold"
+                className=" w-80 md:w-96 py-1.5 px-2 border border-lightPink focus:outline-none placeholder-pink focus:ring-2 focus:ring-pink text-pink placeholder-pink-500"
               />
             </div>
 
@@ -65,7 +66,7 @@ export default function Event() {
                 name="email"
                 required
                 placeholder="Email"
-                className="w-96 py-1.5 px-2 border border-lightPink focus:outline-none focus:ring-2 focus:ring-pink text-pink placeholder-pink-500 font-bold"
+                className=" w-80 md:w-96 py-1.5 px-2 border border-lightPink focus:outline-none placeholder-pink focus:ring-2 focus:ring-pink text-pink placeholder-pink-500 font-normal"
               />
             </div>
 
@@ -77,7 +78,7 @@ export default function Event() {
                 name="subject"
                 required
                 placeholder="Sujet"
-                className="w-96 py-1.5 px-2 border border-lightPink focus:outline-none focus:ring-2 focus:ring-pink text-pink placeholder-pink-500 font-bold"
+                className=" w-80 md:w-96 py-1.5 px-2 border border-lightPink focus:outline-none placeholder-pink focus:ring-2 focus:ring-pink text-pink placeholder-pink-500 font-normal"
               />
             </div>
 
@@ -88,7 +89,7 @@ export default function Event() {
                 id="phone"
                 name="phone"
                 placeholder="Numéro de téléphone"
-                className="w-96 py-1.5 px-2 border border-lightPink focus:outline-none focus:ring-2 focus:ring-pink text-pink placeholder-pink-500 font-bold"
+                className=" w-80 md:w-96 py-1.5 px-2 border border-lightPink focus:outline-none placeholder-pink focus:ring-2 focus:ring-pink text-pink placeholder-pink-500 font-normal"
               />
             </div>
 
@@ -100,12 +101,12 @@ export default function Event() {
                 rows="4"
                 required
                 placeholder="Message"
-                className="w-96 py-1.5 px-2 border border-lightPink focus:outline-none focus:ring-2 focus:ring-pink text-pink placeholder-pink-500 font-bold"
+                className=" w-80 md:w-96 py-1.5 px-2 border border-lightPink focus:outline-none placeholder-pink focus:ring-2 focus:ring-pink text-pink placeholder-pink-500 font-normal"
               ></textarea>
             </div>
 
             {/* Checkbox de consentement */}
-            <div className="mb-6 w-96">
+            <div className="mb-6  w-80 md:w-96">
               <input
                 type="checkbox"
                 id="consent"

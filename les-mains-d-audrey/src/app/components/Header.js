@@ -12,17 +12,17 @@ export default function Header() {
   };
 
   return (
-    <header className="flex flex-row justify-between font-italiana text-xl md:text-2xl">
+    <header className="flex flex-row justify-between lg:mx-12 font-italiana text-xl md:text-2xl">
       {/* Logo */}
       <div>
-      <Link href="/">
-        <Image
-          src="/images/logo.png"
-          alt="logo les mains d'Audrey"
-          width={400}
-          height={400}
-          className="h-24 w-24 md:h-32 md:w-32"
-        />
+        <Link href="/">
+          <Image
+            src="/images/logo.png"
+            alt="logo les mains d'Audrey"
+            width={400}
+            height={400}
+            className="h-24 w-24 md:h-36 md:w-36 z-0"
+          />
         </Link>
       </div>
 
@@ -48,11 +48,21 @@ export default function Header() {
           } md:block  absolute z-30 right-0 top-20 md:top-0 bg-veryLightPink md:bg-transparent p-5 md:p-8 rounded-l-3xl`}
         >
           <ul className="flex flex-col md:flex-row text-pink">
-            <Link href="/"><li className="md:mr-8">Accueil</li></Link>
-            <Link href="/services"><li className="md:mr-8">Prestations</li></Link>
-            <Link href="/about"><li className="md:mr-8">À propos</li></Link>
-            <Link href="/evenements"><li className="md:mr-8">Évènements</li></Link>
-            <Link href="/contact"><li className="">Contact</li></Link>
+            <Link href="/">
+              <li className="md:mr-8 hover:opacity-70">Accueil</li>
+            </Link>
+            <Link href="/services">
+              <li className="md:mr-8 hover:opacity-70">Prestations</li>
+            </Link>
+            <Link href="/about">
+              <li className="md:mr-8 hover:opacity-70">À propos</li>
+            </Link>
+            <Link href="/evenements">
+              <li className="md:mr-8 hover:opacity-70">Évènements</li>
+            </Link>
+            <Link href="/contact">
+              <li className="hover:opacity-70">Contact</li>
+            </Link>
           </ul>
         </nav>
       </div>
