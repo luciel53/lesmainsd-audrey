@@ -3,10 +3,6 @@ import "./styles/globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-export const metadata = {
-  title: "Les mains d'Audrey - Ateliers Bébé Signe",
-  description: "Découvrez les ateliers de bébé signe pour renforcer la communication entre parents et bébés. Ateliers individuels, collectifs, en collectivités et ateliers en entreprises sur la culture sourde.",
-};
 
 export default function RootLayout({ children }) {
   return (

@@ -2,6 +2,12 @@ import Image from "next/image";
 import Accordion from "./components/Accordion";
 import Button from "./components/Button";
 
+export const metadata = {
+  title: "Les mains d'Audrey - Ateliers Bébé Signe",
+  description:
+    "Découvrez les ateliers de bébé signe pour renforcer la communication entre parents et bébés. Ateliers individuels, collectifs, en collectivités et ateliers en entreprises sur la culture sourde.",
+};
+
 export default function Home() {
   return (
     <div className=" mt-4">
@@ -10,24 +16,20 @@ export default function Home() {
           les mains d'Audrey
         </h1>
         <h2 className=" font-italiana text-xl md:text-3xl lg:text-4xl mb-3 lg:mb-6">
-          Facilitatrice de lien Parents/Bébé
+          Facilitatrice de lien Parents/Bébé (Bébé Signe)
         </h2>
       </section>
       <section>
         <p className=" mx-auto w-[88%] md:w-[70%] font-jaldi md:text-xl text-justify mb-4">
           Le <strong>bébé signe</strong>, ou « <strong>baby sign</strong> » en
           anglais, fait référence à une méthode de communication utilisant des
-          signes de la langue des signes. C’est une merveilleuse passerelle pour{" "}
+          signes de la langue des signes. C'est une merveilleuse passerelle pour{" "}
           <strong>renforcer le lien entre parents et tout-petits</strong>. Avant
-          même de parler, les{" "}
-          <strong>
-            bébés peuvent exprimer leurs besoins et leurs émotions
-          </strong>
-          ,{" "}
-          <strong>
-            réduisant ainsi les frustrations et favorisant la complicité
-          </strong>
-          . En tant que <strong>facilitatrice de lien parents-bébé</strong>, je
+          même de parler, les bébés peuvent <em>exprimer leurs besoins</em> et
+          leurs
+          <em>émotions</em> ,{" "}
+          <em>réduisant ainsi les frustrations et favorisant la complicité</em>.
+          En tant que <strong>facilitatrice de lien parents-bébé</strong>, je
           vous guide dans cette aventure pour{" "}
           <strong>établir une communication douce et enrichissante</strong>,{" "}
           <strong>au rythme de votre enfant</strong>.

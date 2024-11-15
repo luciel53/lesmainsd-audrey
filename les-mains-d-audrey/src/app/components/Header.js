@@ -80,14 +80,14 @@ export default function Header() {
           ref={menuRef}
           className={`${
             isOpen ? "block animate-fade-down animate-ease-in-out" : "hidden"
-          } md:block  absolute z-30 right-0 top-20 md:top-0 bg-veryLightPink md:bg-transparent p-5 md:p-8 rounded-l-3xl`}
+          } md:block  absolute z-30 right-0 top-20 md:top-0 bg-veryLightPink bg-opacity-95 drop-shadow-lg md:bg-transparent p-5 md:p-8 rounded-l-3xl`}
         >
           <ul className="flex flex-col md:flex-row text-pink">
             {menuItems.map((item) => (
               <Link href={item.href} key={item.href}>
                 <li
                   className={`md:mr-8 relative flex flex-col items-center hover:opacity-60 ${
-                    pathname === item.href ? "opacity-80" : "opacity-100"
+                    pathname === item.href ? "opacity-70" : "opacity-100"
                   }`}
                 >
                   {item.label}

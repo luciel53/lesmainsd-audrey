@@ -21,7 +21,7 @@ export default function Accordion({ title, children, isFirst }) {
             : " border border-lightPink"
         } ${isFirst ? "" : "border-t-0"}`}
       >
-                <span className="font-jaldi w-full text-left flex-grow md:text-xl">{title}</span>
+                <h3 className="font-jaldi w-full text-left flex-grow md:text-xl">{title}</h3>
         <span>
           <Image
             src={isOpen ? "/images/icons/minus.png" : "/images/icons/add.png"}

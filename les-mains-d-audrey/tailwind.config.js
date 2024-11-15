@@ -13,7 +13,7 @@ module.exports = {
         gold: "#BD8334",
         pink: "#D25D8F",
         lightPink: "#DF9AC5",
-        veryLightPink: "#fce3d7",
+        veryLightPink: "#FFDEF0",
         lightBG: "#F3F2F0",
       },
       fontFamily: {
