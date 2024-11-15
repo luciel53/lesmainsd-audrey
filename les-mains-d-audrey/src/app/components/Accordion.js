@@ -21,27 +21,27 @@ export default function Accordion({ title, children, isFirst }) {
             : " border border-lightPink"
         } ${isFirst ? "" : "border-t-0"}`}
       >
-        <span className="font-jaldi md:text-xl">{title}</span>
+                <span className="font-jaldi w-full text-left flex-grow md:text-xl">{title}</span>
         <span>
           <Image
-            src="/images/icons/add.png"
+            src={isOpen ? "/images/icons/minus.png" : "/images/icons/add.png"}
             alt="Click to dropdown"
-            width={200}
-            height={200}
-            className="w-6 h-6"
+            width={150}
+            height={150}
+            className="w-5 h-5 mt-1"
           />
         </span>
       </button>
       {isOpen && (
-        <div className="flex flex-row justify-between w-80 md:w-[60%] lg:w-[40%] bg-lightBG border-x border-b border-lightPink px-4 py-2">
-          <div className=" w-44 md:w-72 lg:w-[68%] whitespace-break-spaces break-words">
-            <p className="font-jaldi italic md:text-xl">
+        <div className="flex flex-col justify-between w-80 md:w-[60%] lg:w-[40%] bg-lightBG border-x border-b border-lightPink px-4 py-2">
+          <div className=" whitespace-break-spaces break-words">
+            <p className="font-jaldi italic text-justify md:text-xl">
             {children}
             </p>
           </div>
           <div className=" self-center">
             <Link href="/services">
-            <button className="text-gold font-jaldi w-24 md:mr-4 lg:mr-4 drop-shadow-lg border border-gold rounded-full px-2 hover:text-lightBG hover:bg-gold hover:opacity-90 transition duration-300 ease-in-out">En savoir +</button>
+            <button className="text-gold font-jaldi w-24 md:mr-4 lg:mr-4 mt-3 mb-2 drop-shadow-lg border border-gold rounded-full px-2 hover:text-lightBG hover:bg-gold hover:opacity-90 transition duration-300 ease-in-out">En savoir +</button>
             </Link>
           </div>
         </div>

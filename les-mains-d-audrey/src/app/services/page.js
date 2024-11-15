@@ -3,8 +3,8 @@ import PrestationsCard from "../components/PrestationsCard";
 export default function Prestations() {
   return (
     <div className="mb-8">
-      <h1 className="font-brittany text-6xl">Prestations</h1>
-      <p className="mt-10 md:mb-4 w-80 md:w-[60%] lg:w-[50%] mx-auto text-justify font-jaldi text-xl">
+      <h1 className="font-brittany text-4xl md:text-5xl lg:text-6xl">Prestations</h1>
+      <p className="mt-10 mb-4 w-80 md:w-[60%] lg:w-[50%] mx-auto text-justify font-jaldi md:text-xl">
         Je vous propose différents ateliers parents-enfants ludiques. Vous vous
         initierez aux signes associés à la parole en chansons. Les ateliers sont
         conviviaux et participatifs. Réalisables individuellement ou
