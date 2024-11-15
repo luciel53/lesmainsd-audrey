@@ -2,11 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef(null);
+  const buttonRef = useRef(null);
   const pathname = usePathname();
 
   const menuItems = [
@@ -20,6 +22,27 @@ export default function Header() {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  // close menu when clicking outside of menu or burger button
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target)
+        ) {
+          setIsOpen(false);
+        }
+    };
+
+    //Add event listener to detect clicks outside of
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuRef, buttonRef]);
 
   return (
     <header className="flex flex-row justify-between lg:mx-12 font-italiana text-xl md:text-2xl">
@@ -41,6 +64,7 @@ export default function Header() {
         <button
           className="block md:hidden mt-6 mr-5"
           onClick={toggleMenu}
+          ref={buttonRef}
           aria-label="Toggle menu"
         >
           {/* Icone burger */}
@@ -53,6 +77,7 @@ export default function Header() {
         </button>
 
         <nav
+          ref={menuRef}
           className={`${
             isOpen ? "block animate-fade-down animate-ease-in-out" : "hidden"
           } md:block  absolute z-30 right-0 top-20 md:top-0 bg-veryLightPink md:bg-transparent p-5 md:p-8 rounded-l-3xl`}
