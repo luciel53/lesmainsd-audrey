@@ -31,7 +31,7 @@ export default function Header() {
             alt="logo les mains d'Audrey"
             width={400}
             height={400}
-            className="h-24 w-24 md:h-36 md:w-36 z-0"
+            className="h-24 w-24 md:h-36 md:w-36 z-0 drop-shadow-sm"
           />
         </Link>
       </div>
@@ -72,7 +72,7 @@ export default function Header() {
                     alt="Icône de survol"
                     width={40}
                     height={40}
-                    className={`md:-mt-2 transition-opacity duration-300 ${
+                    className={`hidden md:block md:-mt-2 transition-opacity duration-300 ${
                       pathname === item.href ? "opacity-100" : "opacity-0 group-hover:opacity-0"
                     }`}
                   />

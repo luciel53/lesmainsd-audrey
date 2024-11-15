@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Button from "../components/Button";
+import Link from "next/link";
 
 export default function Event() {
   return (
@@ -23,24 +24,33 @@ export default function Event() {
           <p>SMS : 06 75 34 08 67</p>
           <p>Retrouvez-moi sur les réseaux sociaux:</p>
           <div className="flex flex-row w-72 mt-2 justify-center">
-            <Image
-              src="/images/icons/facebook.png"
-              alt="Icone Facebook"
-              width={35}
-              height={35}
-            />
-            <Image
-              src="/images/icons/instagram.png"
-              alt="Icone Facebook"
-              width={35}
-              height={35}
-            />
-            <Image
-              src="/images/icons/linkedin.png"
-              alt="Icone Facebook"
-              width={35}
-              height={35}
-            />
+            <Link href="https://www.facebook.com/profile.php?id=61558150675264">
+              <Image
+                src="/images/icons/facebook.png"
+                alt="Icone Facebook"
+                width={35}
+                height={35}
+                className="hover:opacity-80"
+              />
+            </Link>
+            <Link href="https://www.instagram.com/lesmainsdaudrey44/#">
+              <Image
+                src="/images/icons/instagram.png"
+                alt="Icone Facebook"
+                width={35}
+                height={35}
+                className="hover:opacity-80"
+              />
+            </Link>
+            <Link href="https://www.linkedin.com/in/audrey-florenceau-les-mains-d-audrey-a79916111/">
+              <Image
+                src="/images/icons/linkedin.png"
+                alt="Icone Facebook"
+                width={35}
+                height={35}
+                className="hover:opacity-80"
+              />
+            </Link>
           </div>
         </div>
         {/* Form */}
@@ -54,7 +64,7 @@ export default function Event() {
                 name="name"
                 required
                 placeholder="Nom"
-                className=" w-80 md:w-[120%] py-1.5 px-2 border border-lightPink focus:outline-none placeholder-pink focus:ring-2 focus:ring-pink text-pink placeholder-pink-500"
+                className=" w-80 md:w-96 py-1.5 px-2 border border-lightPink focus:outline-none placeholder-pink focus:ring-2 focus:ring-pink text-pink placeholder-pink-500"
               />
             </div>
 
@@ -66,7 +76,7 @@ export default function Event() {
                 name="email"
                 required
                 placeholder="Email"
-                className=" w-80 md:w-[120%] py-1.5 px-2 border border-lightPink focus:outline-none placeholder-pink focus:ring-2 focus:ring-pink text-pink placeholder-pink-500 font-normal"
+                className=" w-80 md:w-96 py-1.5 px-2 border border-lightPink focus:outline-none placeholder-pink focus:ring-2 focus:ring-pink text-pink placeholder-pink-500 font-normal"
               />
             </div>
 
@@ -78,7 +88,7 @@ export default function Event() {
                 name="subject"
                 required
                 placeholder="Sujet"
-                className=" w-80 md:w-[120%] py-1.5 px-2 border border-lightPink focus:outline-none placeholder-pink focus:ring-2 focus:ring-pink text-pink placeholder-pink-500 font-normal"
+                className=" w-80 md:w-96 py-1.5 px-2 border border-lightPink focus:outline-none placeholder-pink focus:ring-2 focus:ring-pink text-pink placeholder-pink-500 font-normal"
               />
             </div>
 
@@ -89,7 +99,7 @@ export default function Event() {
                 id="phone"
                 name="phone"
                 placeholder="Numéro de téléphone"
-                className=" w-80 md:w-[120%] py-1.5 px-2 border border-lightPink focus:outline-none placeholder-pink focus:ring-2 focus:ring-pink text-pink placeholder-pink-500 font-normal"
+                className=" w-80 md:w-96 py-1.5 px-2 border border-lightPink focus:outline-none placeholder-pink focus:ring-2 focus:ring-pink text-pink placeholder-pink-500 font-normal"
               />
             </div>
 
@@ -101,12 +111,12 @@ export default function Event() {
                 rows="4"
                 required
                 placeholder="Message"
-                className=" w-80 md:w-[120%] py-1.5 px-2 border border-lightPink focus:outline-none placeholder-pink focus:ring-2 focus:ring-pink text-pink placeholder-pink-500 font-normal"
+                className=" w-80 md:w-96 py-1.5 px-2 border border-lightPink focus:outline-none placeholder-pink focus:ring-2 focus:ring-pink text-pink placeholder-pink-500 font-normal"
               ></textarea>
             </div>
 
             {/* Checkbox de consentement */}
-            <div className="mb-6  w-80 md:w-96">
+            <div className="mb-6 w-80 md:w-96">
               <input
                 type="checkbox"
                 id="consent"
@@ -114,7 +124,10 @@ export default function Event() {
                 required
                 className="mr-2 "
               />
-              <label htmlFor="consent" className="text-sm text-gray-700 text-justify">
+              <label
+                htmlFor="consent"
+                className="text-sm text-gray-700 text-justify"
+              >
                 En soumettant ce formulaire, j'accepte que mes données soient
                 collectées et traitées dans le cadre de ma demande. Ces
                 informations ne seront utilisées que pour répondre à votre
