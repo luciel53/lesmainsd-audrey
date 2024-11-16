@@ -1,6 +1,7 @@
 import Link from "next/link";
 import PrestationsCard from "../components/PrestationsCard";
 import Button from "../components/Button";
+import Cloud from "../components/Cloud";
 
 export const metadata = {
   title: "Les mains d'Audrey - Ateliers Bébé Signe",
@@ -14,7 +15,9 @@ export default function Prestations() {
       <h1 className="font-brittany text-4xl md:text-5xl lg:text-6xl">
         Prestations
       </h1>
-      <section>
+      <Cloud />
+      <section className=" relative z-10">
+
         <p className="mt-10 mb-4 w-80 md:w-[60%] lg:w-[60%] mx-auto text-justify font-jaldi md:text-xl">
           Je vous propose différents ateliers parents-enfants ludiques. Vous
           vous initierez aux <strong>signes associés à la parole</strong> en

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Accordion from "./components/Accordion";
 import Button from "./components/Button";
+import Cloud from "./components/Cloud";
 
 export const metadata = {
   title: "Les mains d'Audrey - Ateliers Bébé Signe",
@@ -11,7 +12,8 @@ export const metadata = {
 export default function Home() {
   return (
     <div className=" mt-4">
-      <section>
+      <Cloud />
+      <section className="relative z-10">
         <h1 className="font-brittany text-4xl md:text-5xl lg:text-6xl mb-6 md:mb-8 lg:mb-12">
           les mains d'Audrey
         </h1>
@@ -19,7 +21,8 @@ export default function Home() {
           Facilitatrice de lien Parents/Bébé (Bébé Signe)
         </h2>
       </section>
-      <section>
+      <section className="relative z-10">
+
         <p className=" mx-auto w-[88%] md:w-[70%] lg:w-[60%] font-jaldi md:text-xl text-justify mb-4">
           Le <strong>bébé signe</strong>, ou « <strong>baby sign</strong> » en
           anglais, fait référence à une méthode de communication utilisant des
@@ -36,7 +39,7 @@ export default function Home() {
         </p>
       </section>
       {/* Accordion */}
-      <section className="mt-6">
+      <section className="mt-6 relative z-10">
         <div>
           <Accordion
             title="Ateliers bébé signe en individuel"
