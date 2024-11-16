@@ -1,7 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 
-export default function Event() {
+export const metadata = {
+  title: "Les mains d'Audrey - Ateliers Bébé Signe",
+  description:
+    "Découvrez les ateliers bébé signe pour renforcer la communication entre parents et bébés. Ateliers individuels, collectifs, en collectivités. Vous trouverez ici les mentions légales de Les mains d'Audrey",
+};
+
+export default function LegalMentions() {
   return (
     <div className="flex flex-col text-justify">
       <h1 className="font-brittany text-4xl md:text-6xl mb-16">

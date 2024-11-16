@@ -54,7 +54,7 @@ export default function Header() {
             alt="logo les mains d'Audrey"
             width={400}
             height={400}
-            className="h-24 w-24 md:h-36 md:w-36 z-0 drop-shadow-sm"
+            className="h-24 w-24 lg:h-36 lg:w-36 z-0 drop-shadow-sm"
           />
         </Link>
       </div>

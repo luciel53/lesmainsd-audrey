@@ -20,7 +20,7 @@ export default function Home() {
         </h2>
       </section>
       <section>
-        <p className=" mx-auto w-[88%] md:w-[70%] font-jaldi md:text-xl text-justify mb-4">
+        <p className=" mx-auto w-[88%] md:w-[70%] lg:w-[60%] font-jaldi md:text-xl text-justify mb-4">
           Le <strong>bébé signe</strong>, ou « <strong>baby sign</strong> » en
           anglais, fait référence à une méthode de communication utilisant des
           signes de la langue des signes. C'est une merveilleuse passerelle pour{" "}

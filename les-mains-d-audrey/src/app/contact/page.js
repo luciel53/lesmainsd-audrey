@@ -2,7 +2,13 @@ import Image from "next/image";
 import Button from "../components/Button";
 import Link from "next/link";
 
-export default function Event() {
+export const metadata = {
+  title: "Les mains d'Audrey - Ateliers Bébé Signe",
+  description:
+    "Découvrez les ateliers bébé signe pour renforcer la communication entre parents et bébés. Ateliers individuels, collectifs, en collectivités et en entreprises sur la culture sourde.",
+};
+
+export default function Contact() {
   return (
     <div className="mb-8 md:mb-16">
       <h1 className="font-brittany text-4xl md:text-5xl lg:text-6xl mb-6 md:mb-8 lg:mb-12">

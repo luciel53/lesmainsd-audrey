@@ -14,7 +14,7 @@ export default function Prestations() {
         Prestations
       </h1>
       <section>
-        <p className="mt-10 mb-4 w-80 md:w-[60%] lg:w-[50%] mx-auto text-justify font-jaldi md:text-xl">
+        <p className="mt-10 mb-4 w-80 md:w-[60%] lg:w-[60%] mx-auto text-justify font-jaldi md:text-xl">
           Je vous propose différents ateliers parents-enfants ludiques. Vous
           vous initierez aux <strong>signes associés à la parole</strong> en
           chansons. Les ateliers sont <strong>conviviaux</strong> et{" "}
@@ -31,7 +31,7 @@ export default function Prestations() {
       </section>
       {/* Grid */}
       <section>
-        <div className="grid grid-cols md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-4 w-[86%] md:w-[89%] mx-auto md:mt-2">
+        <div className="grid grid-cols md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-4 w-[86%] md:w-[89%] lg:w-[81%] mx-auto md:mt-2">
           <PrestationsCard
             title="Ateliers Bébé signe
 individuel"
