@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Button from "../components/Button";
 import Link from "next/link";
+import Cloud from "../components/Cloud";
 
 export const metadata = {
   title: "Les mains d'Audrey - Ateliers Bébé Signe",
@@ -14,7 +15,8 @@ export default function Contact() {
       <h1 className="font-brittany text-4xl md:text-5xl lg:text-6xl mb-6 md:mb-8 lg:mb-12">
         Contactez-moi
       </h1>
-      <div className="flex flex-wrap-reverse font-jaldi md:text-xl lg:flex-row justify-evenly mx-40">
+      <Cloud />
+      <div className="flex flex-wrap-reverse font-jaldi relative z-10 md:text-xl lg:flex-row justify-evenly mx-40">
         <div className="md:mt-8 mx-4">
           <Image
             src="/images/logo.png"

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Cloud from "../components/Cloud";
 
 export const metadata = {
   title: "Les mains d'Audrey - Ateliers Bébé Signe",
@@ -9,7 +10,8 @@ export const metadata = {
 export default function Event() {
   return (
     <div>
-      <section>
+      <Cloud />
+      <section className=" relative z-10">
         <h1 className="font-brittany text-4xl md:text-5xl lg:text-6xl mb-6 md:mb-8 lg:mb-12">
           Évènements
         </h1>

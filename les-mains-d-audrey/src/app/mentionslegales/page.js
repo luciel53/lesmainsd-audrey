@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import Cloud from "../components/Cloud";
 
 export const metadata = {
   title: "Les mains d'Audrey - Ateliers Bébé Signe",
@@ -13,6 +14,7 @@ export default function LegalMentions() {
       <h1 className="font-brittany text-4xl md:text-6xl mb-16">
         Mentions légales
       </h1>
+      <Cloud />
       <div className="flex flex-row">
         <div className="flex flex-col">
 
