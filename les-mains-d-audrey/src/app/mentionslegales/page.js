@@ -20,23 +20,23 @@ export default function LegalMentions() {
 
         {/* L'entreprise */}
         <div className="flex flex-col mx-5 md:mx-40 lg:mx-32 mb-3 md:mb-5">
-          <h3 className=" font-bold mb-1">L'entreprise:</h3>
-          <p>Les Mains d'Audrey</p>
+          <h3 className=" font-bold mb-1">L&apos;entreprise:</h3>
+          <p>Les Mains d&apos;Audrey</p>
           <p>Facilitatrice de liens Parents-enfant</p>
           <p>Email : lesmainsdaudrey44@gmail.com</p>
           <p>SMS : 06 75 34 08 67</p>
           <p>
-            <strong className="italic">Les mains d'Audrey</strong> est
+            <strong className="italic">Les mains d&apos;Audrey</strong> est
             accompagnée par :
           </p>
-          <p className="italic font-bold">L'Ouvre-boites</p>
+          <p className="italic font-bold">L&apos;Ouvre-boites</p>
           <p>446 Esplanade Anna Marly 44600</p>
           <p>Saint-Nazaire - tél. : 02.28.21.65.10 </p>
           <p>N° Siren : 449 989 573 00075 FR40449989573 </p>
         </div>
         {/* L'hébergeur */}
         <div className="flex flex-col mx-5 md:mx-40 lg:mx-32 mb-3 md:mb-5">
-          <h3 className=" font-bold mb-1">L'hebergeur:</h3>
+          <h3 className=" font-bold mb-1">L&apos;hebergeur:</h3>
           <p>Netlify Inc.</p>
           <p> 512 2nd Street, Fl 2</p>
           <p>San Francisco, CA 94107</p>
@@ -45,7 +45,7 @@ export default function LegalMentions() {
         {/* Directeur de la publication */}
         <div className="flex flex-col mx-5 md:mx-40 lg:mx-32 mb-3 md:mb-5">
           <h3 className=" font-bold mb-1">Directeur de la publication:</h3>
-          <p>Audrey Florenceau, dirigeante de Les Mains d'Audrey.</p>
+          <p>Audrey Florenceau, dirigeante de Les Mains d&apos;Audrey.</p>
         </div>
 
         {/* Créateur du site */}
@@ -70,16 +70,16 @@ export default function LegalMentions() {
 
           <h4 className="mb-1 mt-1">2. Vos droits</h4>
           <p>
-            Conformément à la réglementation applicable, vous disposez d'un
-            droit d'accès, de rectification, et de suppression de vos données
+            Conformément à la réglementation applicable, vous disposez d&apos;un
+            droit d&apos;accès, de rectification, et de suppression de vos données
             personnelles. Vous pouvez exercer ces droits en nous contactant à
-            l'adresse suivante : lesmainsdaudrey44@gmail.com.
+            l&apos;adresse suivante : lesmainsdaudrey44@gmail.com.
           </p>
 
           <h4 className="mt-1">3. Absence de cookies et de suivi</h4>
           <p>
-            Notre site n'utilise aucun cookie ni aucun outil de suivi. Aucune
-            information de navigation n'est collectée.
+            Notre site n&apos;utilise aucun cookie ni aucun outil de suivi. Aucune
+            information de navigation n&apos;est collectée.
           </p>
         </div>
         </div>

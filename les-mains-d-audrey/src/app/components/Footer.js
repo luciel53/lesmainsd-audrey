@@ -37,7 +37,7 @@ export default function Footer() {
             </Link>
           </div>
           <p className="mt-2">
-            © Les Mains d'Audrey - 2024 -{" "}
+            © Les Mains d&apos;Audrey - 2024 -{" "}
             <Link href="/mentionslegales">Mentions légales</Link>
           </p>
         </div>

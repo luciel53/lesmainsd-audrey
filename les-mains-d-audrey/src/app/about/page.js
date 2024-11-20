@@ -21,20 +21,20 @@ export default function About() {
         <div>
           <Cloud />
           <p className="text-justify relative z-10 font-jaldi md:text-xl">
-            Je m'appelle Audrey, je suis passionnée par la communication et le
+            Je m&apos;appelle Audrey, je suis passionnée par la communication et le
             lien unique qui se crée entre les parents et leurs enfants. Sourde
-            de naissance, j'ai découvert dès mon plus jeune âge la richesse des
-            langues non verbales et l'importance de{" "}
-            <em>l'expression des émotions</em>. Ce parcours m'a menée, au fil
+            de naissance, j&apos;ai découvert dès mon plus jeune âge la richesse des
+            langues non verbales et l&apos;importance de{" "}
+            <em>l&apos;expression des émotions</em>. Ce parcours m&apos;a menée, au fil
             des années, à me spécialiser dans la communication par les signes
             avec les bébés, une merveilleuse passerelle qui permet aux
             tout-petits de communiquer bien avant de savoir parler. Après
             plusieurs expériences professionnelles enrichissantes et étant
-            moi-même devenue maman, j'ai décidé de me consacrer entièrement à
-            cette vocation en créant Les Mains d'Audrey. Mon objectif est simple
+            moi-même devenue maman, j&apos;ai décidé de me consacrer entièrement à
+            cette vocation en créant Les Mains d&apos;Audrey. Mon objectif est simple
             : offrir aux parents les outils pour renforcer le lien avec leur
             enfant, grâce à des ateliers adaptés et bienveillants, basés sur les
-            signes. Formée par l'Académie Éveil et Signes, je me suis aussi
+            signes. Formée par l&apos;Académie Éveil et Signes, je me suis aussi
             nourrie de nombreuses rencontres et formations pour offrir un
             accompagnement sur mesure, qui prend en compte les besoins et le
             rythme de chaque famille. Chaque jour, je suis émerveillée de voir à

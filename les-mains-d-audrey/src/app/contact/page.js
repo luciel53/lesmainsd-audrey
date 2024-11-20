@@ -1,15 +1,66 @@
+"use client";
+
 import Image from "next/image";
-import Button from "../components/Button";
 import Link from "next/link";
 import Cloud from "../components/Cloud";
-
-export const metadata = {
-  title: "Les mains d'Audrey - Ateliers Bébé Signe",
-  description:
-    "Découvrez les ateliers bébé signe pour renforcer la communication entre parents et bébés. Ateliers individuels, collectifs, en collectivités et en entreprises sur la culture sourde.",
-};
+import { useState } from "react";
 
 export default function Contact() {
+  const [errors, setErrors] = useState({});
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.name) newErrors.name = "Le noms est requis";
+    if (!formData.email) newErrors.email = "L'adresse email est requise";
+    if (!formData.subject) newErrors.subject = "Le sujet est requis";
+    if (!formData.message) newErrors.message = "Le message est requis";
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      if (!validateForm()) {
+        return;
+      }
+
+      console.log("Données du form: ", formData);
+
+      const response = await fetch("/.netlify/functions/sendEmail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert("Votre message a été envoyé avec succès.");
+        e.target.reset();
+      } else {
+        alert("Votre message n'a pas pu être envoyé.");
+      }
+    } catch (error) {
+      alert("Erreur lors de l'envoi de votre message");
+    }
+  };
+
   return (
     <div className="mb-8 md:mb-16">
       <h1 className="font-brittany text-4xl md:text-5xl lg:text-6xl mb-6 md:mb-8 lg:mb-12">
@@ -25,7 +76,7 @@ export default function Contact() {
             height={400}
             className=" w-[60%] md:w-[60%] mx-auto drop-shadow-lg"
           />
-          <p>Les mains d'Audrey</p>
+          <p>Les mains d&apos;Audrey</p>
           <p>Facilitatrice de liens Parents-enfant</p>
           <p>lesmainsdaudrey44@gmail.com</p>
           <p>Saint-Nazaire (et alentours)</p>
@@ -63,7 +114,12 @@ export default function Contact() {
         </div>
         {/* Form */}
         <div className="mt-12">
-          <form action="#" method="POST" className="font-jaldi">
+          <form
+            onSubmit={handleSubmit}
+            action="#"
+            method="POST"
+            className="font-jaldi"
+          >
             {/* Champ Nom */}
             <div className="mb-4">
               <input
@@ -72,6 +128,7 @@ export default function Contact() {
                 name="name"
                 required
                 placeholder="Nom"
+                onChange={handleChange}
                 className=" w-80 md:w-96 py-1.5 px-2 border border-lightPink focus:outline-none placeholder-pink focus:ring-2 focus:ring-pink text-pink placeholder-pink-500"
               />
             </div>
@@ -84,6 +141,7 @@ export default function Contact() {
                 name="email"
                 required
                 placeholder="Email"
+                onChange={handleChange}
                 className=" w-80 md:w-96 py-1.5 px-2 border border-lightPink focus:outline-none placeholder-pink focus:ring-2 focus:ring-pink text-pink placeholder-pink-500 font-normal"
               />
             </div>
@@ -96,6 +154,7 @@ export default function Contact() {
                 name="subject"
                 required
                 placeholder="Sujet"
+                onChange={handleChange}
                 className=" w-80 md:w-96 py-1.5 px-2 border border-lightPink focus:outline-none placeholder-pink focus:ring-2 focus:ring-pink text-pink placeholder-pink-500 font-normal"
               />
             </div>
@@ -106,6 +165,7 @@ export default function Contact() {
                 type="tel"
                 id="phone"
                 name="phone"
+                onChange={handleChange}
                 placeholder="Numéro de téléphone"
                 className=" w-80 md:w-96 py-1.5 px-2 border border-lightPink focus:outline-none placeholder-pink focus:ring-2 focus:ring-pink text-pink placeholder-pink-500 font-normal"
               />
@@ -119,6 +179,7 @@ export default function Contact() {
                 rows="4"
                 required
                 placeholder="Message"
+                onChange={handleChange}
                 className=" w-80 md:w-96 py-1.5 px-2 border border-lightPink focus:outline-none placeholder-pink focus:ring-2 focus:ring-pink text-pink placeholder-pink-500 font-normal"
               ></textarea>
             </div>
@@ -136,7 +197,7 @@ export default function Contact() {
                 htmlFor="consent"
                 className="text-sm text-gray-700 text-justify"
               >
-                En soumettant ce formulaire, j'accepte que mes données soient
+                En soumettant ce formulaire, jaccepte que mes données soient
                 collectées et traitées dans le cadre de ma demande. Ces
                 informations ne seront utilisées que pour répondre à votre
                 message et respecteront les règles de confidentialité (voir page
@@ -146,14 +207,9 @@ export default function Contact() {
 
             {/* Sender button */}
             <div className="flex justify-center">
-
-    <div className="font-italiana text-lg md:text-3xl text-gold bg-lightBG px-4 py-2 border border-gold rounded-xl hover:text-lightBG hover:bg-gold hover:opacity-90 drop-shadow-lg transition duration-300 ease-in-out">
-      <Link href="/services">
-        <button>Envoyer</button>
-      </Link>
-    </div>
-
-
+              <div className="font-italiana text-lg md:text-3xl text-gold bg-lightBG px-4 py-2 border border-gold rounded-xl hover:text-lightBG hover:bg-gold hover:opacity-90 drop-shadow-lg transition duration-300 ease-in-out">
+                <button>Envoyer</button>
+              </div>
             </div>
           </form>
         </div>

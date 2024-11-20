@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-export default function Accordion({ title, children, isFirst }) {
+export default function Accordion({ title, content, isFirst }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleAccordion = () => {
@@ -36,7 +36,7 @@ export default function Accordion({ title, children, isFirst }) {
         <div className="flex flex-col justify-between w-80 md:w-[60%] lg:w-[40%] bg-lightBG border-x border-b border-lightPink px-4 py-2">
           <div className=" whitespace-break-spaces break-words">
             <p className="font-jaldi italic text-justify md:text-xl">
-            {children}
+            {content}
             </p>
           </div>
           <div className=" self-center">

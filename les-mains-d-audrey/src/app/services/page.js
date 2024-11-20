@@ -29,7 +29,7 @@ export default function Prestations() {
           <Link href="/contact">
             <strong className=" underline">contactez-moi.</strong>
           </Link>{" "}
-          Aussi, j'organise des <strong>ateliers de sensibilisation</strong>{" "}
+          Aussi, j&apos;organise des <strong>ateliers de sensibilisation</strong>{" "}
           dans les entreprises autour de la <strong>culture sourde</strong>.{" "}
         </p>
       </section>
@@ -99,7 +99,7 @@ individuel"
             </h2>
 
             <p className="w-[90%] mx-auto">
-              Je m'adapte en vous proposant des activités sur-mesure. Pour tout
+              Je m&apos;adapte en vous proposant des activités sur-mesure. Pour tout
               renseignement, contactez-moi
             </p>
             <p className="w-[90%] mx-auto">SUR DEVIS</p>

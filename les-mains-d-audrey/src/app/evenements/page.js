@@ -19,10 +19,10 @@ export default function Event() {
           Réservez votre créneau
         </h2>
         <h3 className=" mx-auto w-[88%] md:w-[70%] lg:w-[60%] font-jaldi md:text-xl text-justify mb-4">
-          J'organise régulièrement des <strong>évènements</strong> comme des{" "}
+          J&apos;organise régulièrement des <strong>évènements</strong> comme des{" "}
           <strong>ateliers</strong>, des{" "}
           <strong>interventions en collectivités</strong>, etc... Vous pouvez
-          réserver votre créneau ci-dessous! Pour toute information, n'hésitez
+          réserver votre créneau ci-dessous! Pour toute information, n&apos;hésitez
           pas à{" "}
           <Link href="/contact">
             <span className=" font-jaldi font-bold md:text-xl underline">
