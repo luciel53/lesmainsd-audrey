@@ -52,6 +52,7 @@ export default function Header() {
           <Image
             src="/images/logo.png"
             alt="logo les mains d'Audrey"
+            unoptimized
             width={400}
             height={400}
             className="h-24 w-24 lg:h-36 lg:w-36 z-0 drop-shadow-sm"
