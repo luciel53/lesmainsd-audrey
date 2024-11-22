@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next-on-netlify",
+    "build": "next build",
     "export": "next export",
     "start": "next start",
     "lint": "next lint"
@@ -13,7 +13,6 @@
     "@netlify/plugin-nextjs": "^5.8.1",
     "decap-cms": "^3.4.0",
     "next": "^15.0.3",
-    "next-on-netlify": "^3.0.1",
     "nodemailer": "^6.9.16",
     "npm-force-resolutions": "^0.0.10",
     "process": "^0.11.10",
