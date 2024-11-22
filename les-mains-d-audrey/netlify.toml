@@ -1,6 +1,6 @@
 [build]
-  command = "npm run build"
-  publish = ".next"
+  command = "next-on-netlify"
+  publish = "out"
   functions = "netlify/functions"
 
 [[redirects]]
