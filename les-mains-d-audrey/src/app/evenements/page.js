@@ -62,7 +62,7 @@ export default async function Event() {
       </section>
       <section>
         {events.map((event) => (
-        <div className="flex flex-row bg-lightBG rounded-xl w-[95%] lg:w-[50%] h-32  mx-auto border border-lightPink drop-shadow-lg mb-4">
+        <div key={event.slug} className="flex flex-row bg-lightBG rounded-xl w-[95%] lg:w-[50%] h-32  mx-auto border border-lightPink drop-shadow-lg mb-4">
           <div className="relative z-0 w-[40%] h-full overflow-hidden">
             <Image
               src={event.image}
