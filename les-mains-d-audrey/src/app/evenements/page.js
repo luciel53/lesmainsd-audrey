@@ -1,6 +1,9 @@
 import Link from "next/link";
 import Cloud from "../components/Cloud";
 import Image from "next/image";
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 
 export const metadata = {
   title: "Les mains d'Audrey - Ateliers Bébé Signe",
@@ -8,7 +11,31 @@ export const metadata = {
     "Découvrez les évènements bébé signe pour renforcer la communication entre parents et bébés. Ateliers individuels, collectifs, en collectivités et en entreprises sur la culture sourde.",
 };
 
-export default function Event() {
+async function getEvents() {
+  const eventsDirectory = path.join(process.cwd(), "content/events");
+
+  if (!fs.existsSync(eventsDirectory)) {
+    console.warn("Could not find events.");
+    return [];
+  }
+
+  const filenames = fs.readdirSync(eventsDirectory);
+
+  const events = filenames.map((filename) => {
+    const filePath = path.join(eventsDirectory, filename);
+    const fileContent = fs.readFileSync(filePath, "utf-8");
+    const { data } = matter(fileContent);
+    return {
+      ...data,
+      slug: filename.replace(".md", ""),
+    };
+  });
+
+  return events; // return events list
+}
+
+export default async function Event() {
+  const events = await getEvents(); // load events
   return (
     <div>
       <Cloud />
@@ -34,24 +61,25 @@ export default function Event() {
         </h3>
       </section>
       <section>
+        {events.map((event) => (
         <div className="flex flex-row bg-lightBG rounded-xl w-[95%] lg:w-[50%] h-32  mx-auto border border-lightPink drop-shadow-lg mb-4">
           <div className="relative z-0 w-[40%] h-full overflow-hidden">
             <Image
-              src="/images/test.jpg"
-              alt="Atelier évènement organisé par les mains d'Audrey - Bébé signe"
+              src={event.image}
+              alt={`${event.title} organisé par les mains d'Audrey - Bébé signe`}
               fill
               className="object-cover rounded-l-xl"
             />
             <div className="flex flex-col absolute z-10 right-0 items-center bg-lightPink h-12 w-12 rounded-es-xl">
               <span className="font-italiana w-8 text-center font-bold">
-                7 Nov
+                {event.date}
               </span>
             </div>
           </div>
 
           <div className="px-3 flex flex-col justify-around">
             <h4 className="font-italiana text-pink text-xl mb-2">
-              Nom de l'évènement
+              {event.title}
             </h4>
             <div className="flex flex-row">
               <Image
@@ -62,7 +90,7 @@ export default function Event() {
                 className="h-5 md:h-8 lg:h-6 w-5 md:w-8 lg:w-6 mr-2"
               />
               <p className="font-jaldi">
-                75 rue du général de Gaulle, 86000 Nullepart
+                {event.location}
               </p>
             </div>
             <div className="flex flex-row justify-between">
@@ -74,9 +102,9 @@ export default function Event() {
                   height={50}
                   className="h-5 md:h-8 lg:h-6 w-5 md:w-8 lg:w-6 mr-2"
                 />
-                <p className="font-jaldi">15h00</p>
+                <p className="font-jaldi">{event.time}</p>
               </div>
-              <Link href="/contact">
+              <Link href={`${event.link}`}>
                 <button className="bg-lightBG mt-3 mb-2 border border-gold rounded-full font-italiana text-gold px-2 hover:text-lightBG hover:bg-gold">
                   Je réserve
                 </button>
@@ -84,6 +112,7 @@ export default function Event() {
             </div>
           </div>
         </div>
+        ))};
       </section>
     </div>
   );
