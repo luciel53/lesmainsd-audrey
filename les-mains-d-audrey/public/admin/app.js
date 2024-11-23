@@ -1,8 +1,7 @@
-// Importation de Netlify CMS
-import CMS from 'decap-cms-app';  // Si vous utilisez Decap CMS, c'est cette version du CMS
+import CMS from 'decap-cms-app';
 
-// Initialisation du CMS
+// CMS initialization
 CMS.init();
 
-// Vous pouvez aussi ajouter des personnalisations ou des prévisualisations si nécessaire
+// Preview
 CMS.registerPreviewTemplate("my-template", MyTemplate);
