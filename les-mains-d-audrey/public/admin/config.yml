@@ -1,16 +1,16 @@
 backend:
   name: git-gateway
-  branch: main # Branche principale de votre dépôt
+  branch: main
 
-media_folder: "public/images/events" # Emplacement des images côté projet
-public_folder: "/images/events" # URL publique des images
+media_folder: "public/images/events"
+public_folder: "/images/events"
 
 collections:
   - name: "events"
     label: "Événements"
-    folder: "content/events" # Où les données seront stockées dans le dépôt
+    folder: "content/events"
     create: true
-    slug: "{{slug}}" # Génère un fichier avec un slug basé sur le titre
+    slug: "{{slug}}" # generate a field with a slug from the title
     fields:
       - { label: "Titre", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
