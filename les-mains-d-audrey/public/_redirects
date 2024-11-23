@@ -1,0 +1,2 @@
+# Redirige toute URL contenant invite_token vers /admin
+/#invite_token=*  /admin/:splat  302
