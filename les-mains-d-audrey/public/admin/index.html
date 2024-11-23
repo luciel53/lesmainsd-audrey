@@ -11,38 +11,34 @@
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
     <script>
-      // Gestion des redirections et des tokens d'invitation
       const hash = window.location.hash;
       const pathname = window.location.pathname;
 
-      // Si le lien contient un "invite_token" mais que l'utilisateur n'est pas sur "/admin"
+      // Redirection automatique vers /admin si nécessaire
       if (hash.includes("invite_token") && !pathname.includes("/admin")) {
-        // Redirige automatiquement vers "/admin" avec le même hash
         window.location.pathname = "/admin" + hash;
       }
 
-      // Si on est sur "/admin" avec un token, afficher un formulaire pour définir le mot de passe
+      // Gestion de l'invitation
       if (pathname.includes("/admin") && hash.includes("invite_token")) {
         const token = hash.split("invite_token=")[1];
 
         if (token) {
-          // Afficher le formulaire
           document.body.innerHTML = `
             <form id="setup-password-form">
               <h1>Configurer votre compte</h1>
               <p>Définissez un mot de passe pour activer votre compte.</p>
-              <input type="password" id="password" placeholder="Nouveau mot de passe" required autocomplete="new-password" />
+              <input type="hidden" id="username" name="username" value="default-user" />
+              <input type="password" id="password" name="password" placeholder="Nouveau mot de passe" required autocomplete="new-password" />
               <button type="submit">Valider</button>
             </form>
           `;
 
-          // Gérer la soumission du formulaire
           document.getElementById("setup-password-form").addEventListener("submit", async (event) => {
             event.preventDefault();
             const password = document.getElementById("password").value;
 
             try {
-              // Envoyer la requête pour accepter l'invitation
               const response = await fetch("/.netlify/identity/accept-invite", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -51,14 +47,14 @@
 
               if (response.ok) {
                 alert("Mot de passe configuré avec succès ! Vous pouvez maintenant vous connecter.");
-                window.location.href = "/admin/"; // Redirection vers l'administration
+                window.location.href = "/admin/";
               } else {
                 const error = await response.json();
                 alert(`Erreur : ${error.msg}`);
               }
             } catch (err) {
               console.error("Erreur réseau :", err);
-              alert("Une erreur réseau est survenue. Veuillez réessayer.");
+              alert("Une erreur est survenue. Veuillez réessayer.");
             }
           });
         }

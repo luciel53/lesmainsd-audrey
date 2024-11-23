@@ -11,15 +11,5 @@
   to = "/admin/index.html"
   status = 200
 
-[[redirects]]
-  from = "/admin/#invite_token=*"
-  to = "/admin/setup"
-  status = 200
-
-[[redirects]]
-  from = "/admin/#confirmation_token=*"
-  to = "/admin/reset-password"
-  status = 200
-
 [functions]
   directory = "netlify/functions"
