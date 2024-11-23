@@ -22,11 +22,12 @@
         window.location.pathname = "/admin" + hash;
       }
 
-      // Ensuite, on gère le token seulement si on est dans /admin/ avec un invite_token
+      // Vérification que l'on est bien dans /admin/ avec un invite_token
       if (pathname.includes("/admin") && hash.includes("invite_token")) {
         const token = hash.split("invite_token=")[1];
+
+        // Si le token existe, on affiche le formulaire de configuration du mot de passe
         if (token) {
-          // Affiche un formulaire pour configurer le mot de passe
           document.body.innerHTML = `
             <form id="setup-password-form">
               <h1>Configurer votre compte</h1>
@@ -36,6 +37,7 @@
             </form>
           `;
 
+          // Gestion de l'envoi du formulaire
           document.getElementById("setup-password-form").addEventListener("submit", async (event) => {
             event.preventDefault();
             const password = document.getElementById("password").value;
