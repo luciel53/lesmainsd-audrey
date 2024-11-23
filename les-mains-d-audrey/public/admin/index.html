@@ -7,62 +7,62 @@
     <title>Content Manager</title>
   </head>
   <body>
-    <!-- Include the script that builds the page and powers Decap CMS -->
+    <!-- Script principal de Decap CMS -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-    <script type="module" src="/admin/app.js"></script>
-    <script src="/admin/config.yml"></script>
 
     <script>
-      // const hash = window.location.hash;
-      // const pathname = window.location.pathname;
+      // Gestion des redirections et des tokens d'invitation
+      const hash = window.location.hash;
+      const pathname = window.location.pathname;
 
-      // // Si le lien contient un "invite_token", mais que le chemin ne contient pas "/admin",
-      // // on redirige d'abord vers "/admin" avec le même hash.
-      // if (hash.includes("invite_token") && !pathname.includes("/admin")) {
-      //   window.location.pathname = "/admin" + hash;
-      // }
+      // Si le lien contient un "invite_token" mais que l'utilisateur n'est pas sur "/admin"
+      if (hash.includes("invite_token") && !pathname.includes("/admin")) {
+        // Redirige automatiquement vers "/admin" avec le même hash
+        window.location.pathname = "/admin" + hash;
+      }
 
-      // // Vérification que l'on est bien dans /admin/ avec un invite_token
-      // if (pathname.includes("/admin") && hash.includes("invite_token")) {
-      //   const token = hash.split("invite_token=")[1];
+      // Si on est sur "/admin" avec un token, afficher un formulaire pour définir le mot de passe
+      if (pathname.includes("/admin") && hash.includes("invite_token")) {
+        const token = hash.split("invite_token=")[1];
 
-      //   // Si le token existe, on affiche le formulaire de configuration du mot de passe
-      //   if (token) {
-      //     document.body.innerHTML = `
-      //       <form id="setup-password-form">
-      //         <h1>Configurer votre compte</h1>
-      //         <p>Définissez un mot de passe pour activer votre compte.</p>
-      //         <input type="password" id="password" placeholder="Nouveau mot de passe" required />
-      //         <button type="submit">Valider</button>
-      //       </form>
-      //     `;
+        if (token) {
+          // Afficher le formulaire
+          document.body.innerHTML = `
+            <form id="setup-password-form">
+              <h1>Configurer votre compte</h1>
+              <p>Définissez un mot de passe pour activer votre compte.</p>
+              <input type="password" id="password" placeholder="Nouveau mot de passe" required autocomplete="new-password" />
+              <button type="submit">Valider</button>
+            </form>
+          `;
 
-      //     // Gestion de l'envoi du formulaire
-      //     document.getElementById("setup-password-form").addEventListener("submit", async (event) => {
-      //       event.preventDefault();
-      //       const password = document.getElementById("password").value;
+          // Gérer la soumission du formulaire
+          document.getElementById("setup-password-form").addEventListener("submit", async (event) => {
+            event.preventDefault();
+            const password = document.getElementById("password").value;
 
-      //       try {
-      //         const response = await fetch("/.netlify/identity/accept-invite", {
-      //           method: "POST",
-      //           headers: { "Content-Type": "application/json" },
-      //           body: JSON.stringify({ token, password }),
-      //         });
+            try {
+              // Envoyer la requête pour accepter l'invitation
+              const response = await fetch("/.netlify/identity/accept-invite", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ token, password }),
+              });
 
-      //         if (response.ok) {
-      //           alert("Mot de passe configuré ! Vous pouvez maintenant vous connecter.");
-      //           window.location.href = "/admin/";  // Redirection vers la page d'accueil admin
-      //         } else {
-      //           const error = await response.json();
-      //           alert(`Erreur : ${error.msg}`);
-      //         }
-      //       } catch (err) {
-      //         console.error("Erreur réseau :", err);
-      //         alert("Une erreur est survenue. Réessayez plus tard.");
-      //       }
-      //     });
-      //   }
-      // }
+              if (response.ok) {
+                alert("Mot de passe configuré avec succès ! Vous pouvez maintenant vous connecter.");
+                window.location.href = "/admin/"; // Redirection vers l'administration
+              } else {
+                const error = await response.json();
+                alert(`Erreur : ${error.msg}`);
+              }
+            } catch (err) {
+              console.error("Erreur réseau :", err);
+              alert("Une erreur réseau est survenue. Veuillez réessayer.");
+            }
+          });
+        }
+      }
     </script>
   </body>
 </html>
