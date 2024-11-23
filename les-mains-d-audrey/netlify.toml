@@ -11,5 +11,10 @@
   to = "/admin/index.html"
   status = 200
 
+  [[redirects]]
+  from = "/admin/invite*"
+  to = "/admin/"
+  status = 200
+
 [functions]
   directory = "netlify/functions"
