@@ -14,12 +14,6 @@
 [functions]
   directory = "netlify/functions"
 
-[[redirects]]
-  from = "/.netlify/identity/*"
-  to = "/.netlify/identity/:splat"
-  status = 200
-
-
 [identity]
   url = "https://cheery-mandazi-1cfdfe.netlify.app/.netlify/identity"
 
