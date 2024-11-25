@@ -41,21 +41,24 @@
               const password = document.getElementById("password").value;
 
               try {
-                // Essaie de parser la réponse en JSON seulement si c'est valide
-                const responseData = JSON.parse(textResponse);
+                const response = await fetch("/.netlify/identity/accept-invite", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({ token, password }),
+                });
+
+                // Vérifie si la réponse est valide (HTTP 200 OK)
                 if (response.ok) {
-                  alert(
-                    "Mot de passe configuré avec succès ! Vous pouvez maintenant vous connecter."
-                  );
+                  const responseData = await response.json(); // Utilise .json() pour obtenir la réponse en JSON
+                  alert("Mot de passe configuré avec succès ! Vous pouvez maintenant vous connecter.");
                   window.location.href = "/admin/";
                 } else {
-                  alert(`Erreur : ${responseData.msg}`);
+                  const errorData = await response.json();
+                  alert(`Erreur : ${errorData.msg}`);
                 }
               } catch (err) {
-                console.error("Erreur lors du parsing du JSON :", err);
-                alert(
-                  "Une erreur est survenue. La réponse du serveur n'est pas au format attendu."
-                );
+                console.error("Erreur réseau :", err);
+                alert("Une erreur est survenue. Veuillez réessayer.");
               }
             });
         }
