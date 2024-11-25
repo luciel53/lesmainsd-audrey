@@ -38,14 +38,24 @@
             .getElementById("setup-password-form")
             .addEventListener("submit", async (event) => {
               event.preventDefault();
+
+              const token = document.getElementById("token").value;
               const password = document.getElementById("password").value;
 
+              const data = {
+                token,
+                password,
+              };
+
               try {
-                const response = await fetch("/.netlify/identity/accept-invite", {
-                  method: "POST",
-                  headers: { "Content-Type": "application/json" },
-                  body: JSON.stringify({ token, password }),
-                });
+                const response = await fetch(
+                  "/.netlify/identity/accept-invite",
+                  {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body,
+                  }
+                );
 
                 // Vérification du type de réponse
                 const contentType = response.headers.get("Content-Type");
@@ -75,7 +85,10 @@
                   );
                 }
               } catch (err) {
-                console.error("Erreur lors du parsing du JSON ou de la requête :", err);
+                console.error(
+                  "Erreur lors du parsing du JSON ou de la requête :",
+                  err
+                );
                 alert(
                   "Une erreur est survenue. La réponse du serveur n'est pas au format attendu."
                 );
