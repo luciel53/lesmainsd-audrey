@@ -47,6 +47,8 @@
                 password,
               };
 
+              const body = JSON.stringify(data);
+
               try {
                 const response = await fetch(
                   "/.netlify/identity/accept-invite",
