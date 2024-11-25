@@ -34,29 +34,30 @@
             </form>
           `;
 
-          document.getElementById("setup-password-form").addEventListener("submit", async (event) => {
-            event.preventDefault();
-            const password = document.getElementById("password").value;
+          document
+            .getElementById("setup-password-form")
+            .addEventListener("submit", async (event) => {
+              event.preventDefault();
+              const password = document.getElementById("password").value;
 
-            try {
-              const response = await fetch("/.netlify/identity/accept-invite", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ token, password }),
-              });
-
-              if (response.ok) {
-                alert("Mot de passe configuré avec succès ! Vous pouvez maintenant vous connecter.");
-                window.location.href = "/admin/";
-              } else {
-                const error = await response.json();
-                alert(`Erreur : ${error.msg}`);
+              try {
+                // Essaie de parser la réponse en JSON seulement si c'est valide
+                const responseData = JSON.parse(textResponse);
+                if (response.ok) {
+                  alert(
+                    "Mot de passe configuré avec succès ! Vous pouvez maintenant vous connecter."
+                  );
+                  window.location.href = "/admin/";
+                } else {
+                  alert(`Erreur : ${responseData.msg}`);
+                }
+              } catch (err) {
+                console.error("Erreur lors du parsing du JSON :", err);
+                alert(
+                  "Une erreur est survenue. La réponse du serveur n'est pas au format attendu."
+                );
               }
-            } catch (err) {
-              console.error("Erreur réseau :", err);
-              alert("Une erreur est survenue. Veuillez réessayer.");
-            }
-          });
+            });
         }
       }
     </script>
