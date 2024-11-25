@@ -47,18 +47,38 @@
                   body: JSON.stringify({ token, password }),
                 });
 
-                // Vérifie si la réponse est valide (HTTP 200 OK)
-                if (response.ok) {
-                  const responseData = await response.json(); // Utilise .json() pour obtenir la réponse en JSON
-                  alert("Mot de passe configuré avec succès ! Vous pouvez maintenant vous connecter.");
-                  window.location.href = "/admin/";
+                // Vérification du type de réponse
+                const contentType = response.headers.get("Content-Type");
+                console.log("Content-Type de la réponse :", contentType);
+
+                let textResponse = "";
+                if (contentType && contentType.includes("application/json")) {
+                  // Si la réponse est JSON, on la parse
+                  const responseData = await response.json();
+                  console.log("Données JSON reçues : ", responseData);
+
+                  if (response.ok) {
+                    alert(
+                      "Mot de passe configuré avec succès ! Vous pouvez maintenant vous connecter."
+                    );
+                    window.location.href = "/admin/";
+                  } else {
+                    alert(`Erreur : ${responseData.msg}`);
+                  }
                 } else {
-                  const errorData = await response.json();
-                  alert(`Erreur : ${errorData.msg}`);
+                  // Si ce n'est pas du JSON, on récupère la réponse en texte brut
+                  textResponse = await response.text();
+                  console.log("Réponse non JSON :", textResponse);
+
+                  alert(
+                    "La réponse du serveur n'était pas au format attendu (JSON)."
+                  );
                 }
               } catch (err) {
-                console.error("Erreur réseau :", err);
-                alert("Une erreur est survenue. Veuillez réessayer.");
+                console.error("Erreur lors du parsing du JSON ou de la requête :", err);
+                alert(
+                  "Une erreur est survenue. La réponse du serveur n'est pas au format attendu."
+                );
               }
             });
         }
