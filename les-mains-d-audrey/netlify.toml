@@ -13,3 +13,7 @@
 
 [functions]
   directory = "netlify/functions"
+
+[identity]
+  url = "https://cheery-mandazi-1cfdfe.netlify.app/.netlify/identity"
+

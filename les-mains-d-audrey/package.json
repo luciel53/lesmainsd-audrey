@@ -12,6 +12,7 @@
   "dependencies": {
     "@netlify/plugin-nextjs": "^5.8.1",
     "decap-cms": "^3.4.0",
+    "netlify-identity-widget": "^1.9.2",
     "next": "^15.0.3",
     "nodemailer": "^6.9.16",
     "npm-force-resolutions": "^0.0.10",
