@@ -11,11 +11,11 @@ export const metadata = {
 export default function LegalMentions() {
   return (
     <div className="flex flex-col text-justify">
-      <h1 className="font-brittany text-4xl md:text-6xl mb-16">
+      <h1 className="relative z-10 font-brittany text-4xl md:text-6xl mb-16">
         Mentions légales
       </h1>
       <Cloud />
-      <div className="flex flex-row">
+      <div className="flex flex-row relative z-10">
         <div className="flex flex-col">
 
         {/* L'entreprise */}
