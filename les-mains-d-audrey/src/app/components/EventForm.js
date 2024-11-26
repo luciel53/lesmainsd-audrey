@@ -51,7 +51,7 @@ export default function EventForm() {
   };
 
   return (
-    <div className="max-w-4xl p-4 bg-lightBG border border-lightPink shadow-lg rounded-lg">
+    <div className="max-w-4xl mx-auto w-80 lg:w-96 p-4 bg-lightBG border border-lightPink shadow-lg rounded-lg">
       <h2 className="text-2xl font-italiana text-center mb-4">
         Créer un Événement
       </h2>
@@ -61,8 +61,8 @@ export default function EventForm() {
         </div>
       )}
 
-      <form onSubmit={handleSubmit}>
-        <div className="mb-4 font-jaldi w-96">
+      <form onSubmit={handleSubmit} className="">
+        <div className="mb-4 font-jaldi">
           <label htmlFor="title" className="block font-medium mb-2">
             Titre de l'événement
           </label>
