@@ -10,22 +10,17 @@ exports.handler = async (event) => {
     };
   }
 
-  const form = new formidable.IncomingForm({
-    uploadDir: path.join(__dirname, "../../public/images/events"),
-    keepExtensions: true,
-    });
+  const form = formidable({ multiples: true });
 
   return new Promise((resolve, reject) => {
     form.parse(event, (err, fields, files) => {
       if (err) {
-        console.error(err);
-        return resolve({
-          statusCode: 500,
-          body: JSON.stringify({
-            message: "Erreur lors de la soumission du formulaire",
-          }),
-        });
+        return reject({ statusCode: 500, body: JSON.stringify(err) });
       }
+      resolve({
+        statusCode: 200,
+        body: JSON.stringify({ fields, files }),
+      })
 
       const { title, date, location, time, link} = fields;
       const image = files.image?.newFilename;
