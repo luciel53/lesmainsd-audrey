@@ -17,3 +17,5 @@
 [identity]
   url = "https://cheery-mandazi-1cfdfe.netlify.app/.netlify/identity"
 
+[build.environment]
+  JWT_SECRET = "ta_clé_secrète"
