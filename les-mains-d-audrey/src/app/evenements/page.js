@@ -8,7 +8,7 @@ import matter from "gray-matter";
 export const metadata = {
   title: "Les mains d'Audrey - Ateliers Bébé Signe",
   description:
-    "Découvrez les évènements bébé signe pour renforcer la communication entre parents et bébés. Ateliers individuels, collectifs, en collectivités et en entreprises sur la culture sourde.",
+    "Découvrez les évènements bébé signe pour renforcer la communication entre parents et bébés. Ateliers individuels, collectifs, en collectivités et en entreprises sur la culture Sourde.",
 };
 
 async function getEvents() {

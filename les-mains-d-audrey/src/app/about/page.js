@@ -5,7 +5,7 @@ import Cloud from "../components/Cloud";
 export const metadata = {
   title: "Les mains d'Audrey - Ateliers Bébé Signe",
   description:
-    "Découvrez les ateliers de bébé signe pour renforcer la communication entre parents et bébés. Ateliers individuels, collectifs, en collectivités et ateliers en entreprises sur la culture sourde.",
+    "Découvrez les ateliers de bébé signe pour renforcer la communication entre parents et bébés. Ateliers individuels, collectifs, en collectivités et ateliers en entreprises sur la culture Sourde.",
 };
 
 export default function About() {

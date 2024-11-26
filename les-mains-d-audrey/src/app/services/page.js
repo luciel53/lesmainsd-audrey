@@ -6,7 +6,7 @@ import Cloud from "../components/Cloud";
 export const metadata = {
   title: "Les mains d'Audrey - Ateliers Bébé Signe",
   description:
-    "Découvrez les ateliers bébé signe pour renforcer la communication entre parents et bébés. Ateliers individuels, collectifs, en collectivités et en entreprises sur la culture sourde.",
+    "Découvrez les ateliers bébé signe pour renforcer la communication entre parents et bébés. Ateliers individuels, collectifs, en collectivités et en entreprises sur la culture Sourde.",
 };
 
 export default function Prestations() {
@@ -30,7 +30,7 @@ export default function Prestations() {
             <strong className=" underline">contactez-moi.</strong>
           </Link>{" "}
           Aussi, j&apos;organise des <strong>ateliers de sensibilisation</strong>{" "}
-          dans les entreprises autour de la <strong>culture sourde</strong>.{" "}
+          dans les entreprises autour de la <strong>culture Sourde</strong>.{" "}
         </p>
       </section>
       {/* Grid */}
