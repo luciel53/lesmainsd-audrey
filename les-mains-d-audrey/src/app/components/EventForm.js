@@ -10,7 +10,7 @@ export default function EventForm() {
   const [image, setImage] = useState(null);
   const [error, setError] = useState("");
 
-  // Fonction pour envoyer les données du formulaire
+  // Send form data
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -27,8 +27,8 @@ export default function EventForm() {
     formData.append("link", link);
     formData.append("image", image);
 
-    // Envoi des données à l'API (par exemple Netlify Function ou API Route)
-    const response = await fetch("/api/events", {
+    // Send data to api (netlify functions)
+    const response = await fetch("/.netlify/functions/eventCreations", {
       method: "POST",
       body: formData,
     });
