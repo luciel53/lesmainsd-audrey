@@ -95,7 +95,7 @@ export default async function Event() {
                   />
                   <p className="font-jaldi">{event.time}</p>
                 </div>
-                <Link href={`${event.link}`}>
+                <Link href={`${event.link && event.link.startsWith("http") ? event.link : "#" }`}>
                   <button className="bg-lightBG mt-3 mb-2 border border-gold rounded-full font-italiana text-gold px-2 hover:text-lightBG hover:bg-gold">
                     Je réserve
                   </button>

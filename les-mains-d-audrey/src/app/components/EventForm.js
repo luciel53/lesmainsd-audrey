@@ -146,6 +146,7 @@ export default function EventForm() {
           <input
             type="file"
             id="image"
+            name="image"
             onChange={(e) => setImage(e.target.files[0])}
             required
             accept="image/*"
