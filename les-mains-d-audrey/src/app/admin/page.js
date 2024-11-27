@@ -27,7 +27,7 @@ export default function AdminPage() {
   return (
     <div className="flex flex-col justify-center items-center overflow-auto">
       <h1 className="font-brittany text-4xl md:text-5xl lg:text-6xl mt-10 mb-6 md:mb-8 lg:mb-12">
-        Panneau d'administration
+        Panneau d&apos;administration
       </h1>
       <div className="flex flex-col md:flex-row justify-center md:gap-4 lg:gap-20 ">
         <section>

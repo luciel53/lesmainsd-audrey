@@ -64,7 +64,7 @@ export default function EventForm() {
       <form onSubmit={handleSubmit} className="">
         <div className="mb-4 font-jaldi">
           <label htmlFor="title" className="block font-medium mb-2">
-            Titre de l'événement
+            Titre de l&apos;événement
           </label>
           <input
             type="text"
@@ -79,7 +79,7 @@ export default function EventForm() {
 
         <div className="mb-4 font-jaldi">
           <label htmlFor="date" className="block font-medium mb-2">
-            Date de l'événement
+            Date de l&apos;événement
           </label>
           <input
             type="date"
@@ -93,7 +93,7 @@ export default function EventForm() {
 
         <div className="mb-4 font-jaldi">
           <label htmlFor="location" className="block font-medium mb-2">
-            Lieu de l'événement
+            Lieu de l&apos;événement
           </label>
           <input
             type="text"
@@ -108,7 +108,7 @@ export default function EventForm() {
 
         <div className="mb-4 font-jaldi">
           <label htmlFor="time" className="block font-medium mb-2">
-            Heure de l'événement
+            Heure de l&apos;événement
           </label>
           <input
             type="time"
@@ -137,7 +137,7 @@ export default function EventForm() {
 
         <div className="mb-4 font-jaldi">
           <label htmlFor="image" className="block font-medium mb-2">
-            Image de l'événement
+            Image de l&apos;événement
           </label>
           <input
             type="file"

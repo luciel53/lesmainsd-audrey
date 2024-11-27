@@ -36,7 +36,7 @@ const AuthForm = () => {
   return (
     <form onSubmit={handleSubmit} className='flex flex-col bg-lightBG w-80 mx-auto border border-veryLightPink rounded-xl'>
       <div className='mt-6 mx-auto font-jaldi flex flex-col'>
-        <label htmlFor="username">Nom d'utilisateur</label>
+        <label htmlFor="username">Nom d&apos;utilisateur</label>
         <input
           type="text"
           id="username"
