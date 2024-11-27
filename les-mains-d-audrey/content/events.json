@@ -1,11 +1,18 @@
 [
-	{
-	  "title": "Atelier de Création",
-	  "date": "2024-12-01",
-	  "location": "Paris",
-	  "time": "14:00",
-	  "link": "https://example.com",
-	  "image": "/images/logo.png"
-	}
-  ]
-
+  {
+    "title": "Atelier de Création",
+    "date": "2024-12-01",
+    "location": "Paris",
+    "time": "14:00",
+    "link": "https://example.com",
+    "image": "/images/logo.png"
+  },
+  {
+    "title": "test",
+    "date": "2024-11-29",
+    "location": "Partout",
+    "time": "17:20",
+    "link": "https://www.chess.com/home",
+    "image": "/images/events/Rectangle 9.png"
+  }
+]

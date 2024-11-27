@@ -19,18 +19,22 @@ export default function EventForm() {
       return;
     }
 
-    const formData = new FormData();
-    formData.append("title", title);
-    formData.append("date", date);
-    formData.append("location", location);
-    formData.append("time", time);
-    formData.append("link", link);
-    formData.append("image", image);
+    const eventData = {
+    title,
+    date,
+    location,
+    time,
+    link,
+    image: image ? image.name : "",
+    };
 
     // Send data to api (netlify functions)
     const response = await fetch("http://localhost:8888/.netlify/functions/eventCreation", {
       method: "POST",
-      body: formData,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(eventData),
     });
 
     const result = await response.json();

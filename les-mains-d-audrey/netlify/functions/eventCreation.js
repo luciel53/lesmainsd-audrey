@@ -1,17 +1,5 @@
-const { existsSync, mkdirSync, writeFileSync } = require('fs');
+const { existsSync, mkdirSync, readFileSync, writeFileSync } = require('fs');
 const { join } = require('path');
-const { Readable } = require('stream');
-const formidable = require('formidable');
-
-// Convertir `event.body` en flux lisible
-function bufferToStream(buffer) {
-  return new Readable({
-    read() {
-      this.push(buffer);
-      this.push(null);
-    },
-  });
-}
 
 exports.handler = async function (event) {
   if (event.httpMethod !== "POST") {
@@ -21,57 +9,69 @@ exports.handler = async function (event) {
     };
   }
 
-  const contentType = event.headers["content-type"] || event.headers["Content-Type"];
-  if (!contentType || !contentType.includes("multipart/form-data")) {
+  // Parser le corps de la requête en JSON
+  let eventData;
+  try {
+    eventData = JSON.parse(event.body);
+  } catch (error) {
     return {
       statusCode: 400,
-      body: JSON.stringify({ message: "Type de contenu invalide. multipart/form-data requis." }),
+      body: JSON.stringify({ message: "Données invalides. JSON attendu." }),
     };
   }
 
-  const form = formidable({ multiples: true, maxFileSize: 10 * 1024 * 1024 });
+  const { title, date, location, time, link, image } = eventData;
 
-  return new Promise((resolve, reject) => {
-    const stream = bufferToStream(Buffer.from(event.body, "base64")); // Convertir le body en flux
+  if (!title || !date || !location || !time || !link || !image) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ message: "Tous les champs sont requis" }),
+    };
+  }
 
-    form.parse(stream, (err, fields, files) => {
-      if (err) {
-        console.error("Erreur lors de l'analyse du formulaire:", err);
-        resolve({
-          statusCode: 500,
-          body: JSON.stringify({ message: "Erreur lors de l'analyse du formulaire", error: err }),
-        });
-        return;
-      }
+  // Définir le chemin du fichier JSON contenant tous les événements
+  const eventsFilePath = join(__dirname, "../../content/events.json");
 
-      const { title, date, location, time, link } = fields;
-      const image = files.image?.newFilename;
-
-      const eventsDir = join(__dirname, "../../content/events");
-      if (!existsSync(eventsDir)) {
-        mkdirSync(eventsDir, { recursive: true });
-      }
-
-      const eventData = {
-        title,
-        date,
-        location,
-        time,
-        link,
-        image: `/images/events/${image}`,
+  // Vérifier si le fichier des événements existe, sinon le créer
+  let events = [];
+  if (existsSync(eventsFilePath)) {
+    try {
+      // Lire le contenu du fichier JSON
+      const fileContent = readFileSync(eventsFilePath, "utf-8");
+      events = JSON.parse(fileContent); // Parse le contenu en tant que tableau d'événements
+    } catch (error) {
+      return {
+        statusCode: 500,
+        body: JSON.stringify({ message: "Erreur de lecture du fichier des événements." }),
       };
+    }
+  }
 
-      const eventPath = join(
-        eventsDir,
-        `${title.replace(/\s+/g, "-").toLowerCase()}.json`,
-      );
+  // Créer un nouvel objet événement
+  const newEvent = {
+    title,
+    date,
+    location,
+    time,
+    link,
+    image: `/images/events/${image}`, // Le chemin d'image est relatif
+  };
 
-      writeFileSync(eventPath, JSON.stringify(eventData, null, 2));
+  // Ajouter le nouvel événement au tableau des événements
+  events.push(newEvent);
 
-      resolve({
-        statusCode: 201,
-        body: JSON.stringify({ message: "Évènement créé avec succès." }),
-      });
-    });
-  });
+  // Sauvegarder le tableau d'événements dans le fichier JSON
+  try {
+    writeFileSync(eventsFilePath, JSON.stringify(events, null, 2));
+  } catch (error) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ message: "Erreur lors de la sauvegarde des événements." }),
+    };
+  }
+
+  return {
+    statusCode: 201,
+    body: JSON.stringify({ message: "Événement créé avec succès." }),
+  };
 };
