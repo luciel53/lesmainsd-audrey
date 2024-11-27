@@ -28,7 +28,7 @@ export default function EventForm() {
     formData.append("image", image);
 
     // Send data to api (netlify functions)
-    const response = await fetch("/.netlify/functions/eventCreation", {
+    const response = await fetch("http://localhost:8888/.netlify/functions/eventCreation", {
       method: "POST",
       body: formData,
     });
