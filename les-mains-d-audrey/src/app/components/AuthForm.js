@@ -1,15 +1,17 @@
 "use client";
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 const AuthForm = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
+  const router = useRouter();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Envoi des informations d'authentification à la fonction Netlify
+    // Send auth's informations to the Netlify function
     const res = await fetch('http://localhost:8888/.netlify/functions/auth', {
       method: 'POST',
       headers: {
@@ -22,8 +24,10 @@ const AuthForm = () => {
 
     if (res.ok) {
       setMessage('Authentification réussie !');
-      // Sauvegarder le token (ex: dans localStorage)
+      // Save the token in localstorage
       localStorage.setItem('token', data.token);
+      // redirection to admin page
+      router.push('/admin');
     } else {
       setMessage(data.message);
     }

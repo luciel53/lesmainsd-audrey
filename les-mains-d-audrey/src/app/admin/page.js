@@ -25,7 +25,7 @@ export default function AdminPage() {
 
   // Si l'utilisateur est authentifié, affiche le panneau d'administration
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center overflow-auto">
       <h1 className="font-brittany text-4xl md:text-5xl lg:text-6xl mt-10 mb-6 md:mb-8 lg:mb-12">
         Panneau d'administration
       </h1>

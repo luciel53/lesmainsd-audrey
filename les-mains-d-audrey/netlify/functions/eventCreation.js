@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const formidable = require('formidable');
 
+
 exports.handler = async (event) => {
   if (event.httpMethod !== "POST") {
     return {
@@ -10,11 +11,12 @@ exports.handler = async (event) => {
     };
   }
 
-  const form = formidable({ multiples: true });
+  const form = formidable({ multiples: true, maxFileSize: 10 * 1024 * 1024 });
 
   return new Promise((resolve, reject) => {
     form.parse(event, (err, fields, files) => {
       if (err) {
+        console.error("erreur lors de l analyse du form", err);
         return reject({ statusCode: 500, body: JSON.stringify(err) });
       }
       resolve({
