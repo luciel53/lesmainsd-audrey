@@ -1,8 +1,7 @@
 import Link from "next/link";
 import Cloud from "../components/Cloud";
 import Image from "next/image";
-import fs from "fs";
-import path from "path";
+import { getEvents } from "../components/getEvents";
 
 export const metadata = {
   title: "Les mains d'Audrey - Ateliers Bébé Signe",
@@ -10,24 +9,8 @@ export const metadata = {
     "Découvrez les évènements bébé signe pour renforcer la communication entre parents et bébés. Ateliers individuels, collectifs, en collectivités et en entreprises sur la culture Sourde.",
 };
 
-// Fonction pour charger les événements depuis le fichier JSON
-async function getEvents() {
-  const filePath = path.join(process.cwd(), "content/events.json"); // Chemin vers ton fichier JSON
-
-  try {
-    // Lire le fichier JSON
-    const data = fs.readFileSync(filePath, "utf-8");
-    const events = JSON.parse(data); // Parse le contenu du fichier JSON
-
-    return events; // Retourner la liste des événements
-  } catch (error) {
-    console.error("Erreur lors du chargement des événements", error);
-    return []; // Si erreur, retourner un tableau vide
-  }
-}
-
 export default async function Event() {
-  const events = await getEvents(); // Charger les événements depuis le fichier JSON
+  const events = await getEvents(); // loads the events from json file
 
   return (
     <div>
@@ -55,7 +38,10 @@ export default async function Event() {
       </section>
       <section>
         {events.map((event) => (
-          <div key={event.title} className="flex flex-row bg-lightBG rounded-xl w-[95%] lg:w-[50%] h-32 mx-auto border border-lightPink drop-shadow-lg mb-4">
+          <div
+            key={event.title}
+            className="flex flex-row bg-lightBG rounded-xl w-[95%] lg:w-[50%] h-32 mx-auto border border-lightPink drop-shadow-lg mb-4"
+          >
             <div className="relative z-0 w-[25%] h-full overflow-hidden">
               <Image
                 src={event.image}
@@ -95,7 +81,13 @@ export default async function Event() {
                   />
                   <p className="font-jaldi">{event.time}</p>
                 </div>
-                <Link href={`${event.link && event.link.startsWith("http") ? event.link : "#" }`}>
+                <Link
+                  href={`${
+                    event.link && event.link.startsWith("http")
+                      ? event.link
+                      : "#"
+                  }`}
+                >
                   <button className="bg-lightBG mt-3 mb-2 border border-gold rounded-full font-italiana text-gold px-2 hover:text-lightBG hover:bg-gold">
                     Je réserve
                   </button>
