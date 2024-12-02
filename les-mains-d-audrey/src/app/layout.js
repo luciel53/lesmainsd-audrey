@@ -27,10 +27,6 @@ export default function RootLayout({ children }) {
     setIsUserChecked(true);
   }, [isAdminPage, router]);
 
-  if (isAdminPage && !isUserChecked) {
-    return null;
-  }
-
   return (
     <html lang="fr">
       <body className="flex flex-col justify-between w-full min-h-screen bg-background bg-cover bg-no-repeat overflow-y-auto">

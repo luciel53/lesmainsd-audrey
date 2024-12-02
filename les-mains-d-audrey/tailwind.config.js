@@ -27,10 +27,14 @@ module.exports = {
       backgroundImage: {
         background: "url('/images/baby-hand-opacity.jpg')",
       },
+      lineClamp: {
+        2: '2',
+      },
 
     },
   },
   plugins: [
     require("tailwindcss-animated"),
+    require('@tailwindcss/line-clamp'),
   ],
 };

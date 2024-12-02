@@ -9,13 +9,30 @@ export const metadata = {
     "Découvrez les évènements bébé signe pour renforcer la communication entre parents et bébés. Ateliers individuels, collectifs, en collectivités et en entreprises sur la culture Sourde.",
 };
 
+// function to formate the dates
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  return new Intl.DateTimeFormat("fr-FR", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }).format(date);
+}
+
+// function to sort the events from the more recent to the older
+function sortEventsByDate(events) {
+  return events.sort((a, b) => new Date(a.date) - new Date(b.date));
+}
+
 export default async function Event() {
   const events = await getEvents(); // loads the events from json file
+  const sortedEvents = sortEventsByDate(events);
 
   return (
     <div>
       <Cloud />
-      <section className="relative z-10">
+      {/* Events presentation */}
+      <section className="relative z-10 lg:mb-8">
         <h1 className="font-brittany text-4xl md:text-5xl lg:text-6xl mb-6 md:mb-8 lg:mb-12">
           Évènements
         </h1>
@@ -36,31 +53,33 @@ export default async function Event() {
           !
         </h3>
       </section>
+      {/* Events Calendar */}
       <section>
-        {events.map((event) => (
+        {sortedEvents.map((event) => (
           <div
             key={event.title}
-            className="flex flex-row bg-lightBG rounded-xl w-[95%] lg:w-[50%] h-32 mx-auto border border-lightPink drop-shadow-lg mb-4"
+            className="flex flex-row bg-lightBG rounded-xl w-[95%] lg:w-[65%] xl:w-[50%] h-32 md:h-36 mx-auto border border-lightPink drop-shadow-lg mb-4 transition-transform duration-200 ease-in-out hover:scale-105 hover:drop-shadow-lg"
           >
-            <div className="relative z-0 w-[25%] h-full overflow-hidden">
+            {/* Left part : Image & Date */}
+            <div className=" flex flex-row justify-center items-center relative z-0 w-48 h-full overflow-hidden">
               <Image
                 src={event.image}
                 alt={`${event.title} organisé par les mains d'Audrey - Bébé signe`}
                 fill
-                className="object-cover rounded-l-xl"
+                className="object-cover"
               />
-              <div className="flex flex-col absolute z-10 right-0 items-center bg-lightPink h-16 w-16 rounded-es-xl opacity-80">
-                <span className="font-italiana w-8 text-center font-bold">
-                  {event.date}
+              <div className="flex flex-col z-10 justify-center items-center h-16 w-16 opacity-80">
+                <span className="font-italiana text-sm md:text-md xl:text-lg w-16 text-center md:-mt-1 lg:-mt-1 font-bold">
+                  {formatDate(event.date)}
                 </span>
               </div>
             </div>
-
-            <div className="px-3 flex flex-col justify-around">
-              <h4 className="font-italiana text-pink text-xl mb-2">
+            {/* Informations part (location, hour, title, link...) */}
+            <div className="px-3 flex flex-col justify-around xl:w-[75%]">
+              <h4 className="font-italiana text-pink md:text-xl xl:text-2xl mb-2 w-60 md:w-96 xl:w-[500px] overflow-y-auto h-12 ">
                 {event.title}
               </h4>
-              <div className="flex flex-row">
+              <div className="flex flex-row w-60 md:w-[450px] xl:w-[530px]">
                 <Image
                   src="/images/icons/location.png"
                   alt="Lieu de l'évènement organisé par les mains d'Audrey"
@@ -68,9 +87,11 @@ export default async function Event() {
                   height={50}
                   className="h-5 md:h-8 lg:h-6 w-5 md:w-8 lg:w-6 mr-2"
                 />
-                <p className="font-jaldi">{event.location}</p>
+                <p className="font-jaldi xl:text-lg md:w-96 xl:w-[500px] overflow-y-auto h-12">
+                  {event.location}
+                </p>
               </div>
-              <div className="flex flex-row justify-between">
+              <div className="flex flex-row w-52 md:w-80 xl:w-[530px] mr-0 lg:mr-10 justify-between">
                 <div className="flex flex-row">
                   <Image
                     src="/images/icons/clock.png"
@@ -79,7 +100,7 @@ export default async function Event() {
                     height={50}
                     className="h-5 md:h-8 lg:h-6 w-5 md:w-8 lg:w-6 mr-2"
                   />
-                  <p className="font-jaldi">{event.time}</p>
+                  <p className="font-jaldi md:text-lg">{event.time}</p>
                 </div>
                 <Link
                   href={`${
@@ -88,7 +109,7 @@ export default async function Event() {
                       : "#"
                   }`}
                 >
-                  <button className="bg-lightBG mt-3 mb-2 border border-gold rounded-full font-italiana text-gold px-2 hover:text-lightBG hover:bg-gold">
+                  <button className="bg-lightBG mt-3 mb-2 xl:mb-4 xl:mr-10 border border-gold rounded-full font-italiana text-gold px-2 hover:text-lightBG hover:bg-gold">
                     Je réserve
                   </button>
                 </Link>

@@ -14,7 +14,7 @@ export default function EventForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!title || !date || !location || !time || !link || !image) {
+    if (!title || !date || !location || !time || !link) {
       setError("Tous les champs sont requis");
       return;
     }
@@ -25,7 +25,7 @@ export default function EventForm() {
     location,
     time,
     link,
-    image: image ? image.name : "",
+    image: "/images/pinkframe.png",
     };
 
     // Send data to api (netlify functions)
@@ -139,20 +139,7 @@ export default function EventForm() {
           />
         </div>
 
-        <div className="mb-4 font-jaldi">
-          <label htmlFor="image" className="block font-medium mb-2">
-            Image de l&apos;événement
-          </label>
-          <input
-            type="file"
-            id="image"
-            name="image"
-            onChange={(e) => setImage(e.target.files[0])}
-            required
-            accept="image/*"
-            className="w-full p-1 border border-gray-300 rounded-md"
-          />
-        </div>
+
         <div className="text-center my-3">
           <button
             type="submit"
