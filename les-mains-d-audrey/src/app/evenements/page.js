@@ -109,7 +109,7 @@ export default async function Event() {
                       : "#"
                   }`}
                 >
-                  <button className="bg-lightBG mt-3 mb-2 xl:mb-4 xl:mr-10 border border-gold rounded-full font-italiana text-gold px-2 hover:text-lightBG hover:bg-gold">
+                  <button className="bg-gold text-lightBG mt-3 mb-2 xl:mb-4 xl:mr-10 border border-gold rounded-full font-italiana px-2 hover:text-gold hover:bg-lightBG">
                     Je réserve
                   </button>
                 </Link>

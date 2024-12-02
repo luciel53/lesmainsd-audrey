@@ -41,7 +41,7 @@ export default function Accordion({ title, content, isFirst }) {
           </div>
           <div className=" self-center">
             <Link href="/services">
-            <button className="text-gold font-jaldi w-24 md:mr-4 lg:mr-4 mt-3 mb-2 drop-shadow-lg border border-gold rounded-full px-2 hover:text-lightBG hover:bg-gold hover:opacity-90 transition duration-300 ease-in-out">En savoir +</button>
+            <button className="text-lightBG bg-gold font-jaldi w-24 md:mr-4 lg:mr-4 mt-3 mb-2 drop-shadow-lg border border-gold rounded-full px-2 hover:text-gold hover:bg-lightBG hover:opacity-90 transition duration-300 ease-in-out">En savoir +</button>
             </Link>
           </div>
         </div>

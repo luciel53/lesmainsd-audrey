@@ -60,7 +60,7 @@ export default function Home() {
           />
         </div>
         <div className="flex flex-row justify-center mt-10 mb-10 ">
-          <Button btnText="Découvrez les ateliers" />
+          <Button btnText="Découvrez les ateliers" link="services" />
         </div>
       </section>
     </div>

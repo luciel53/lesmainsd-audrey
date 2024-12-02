@@ -15,7 +15,7 @@ export default function PrestationsCard({ title, p1, p2, p3, p4, p5, p6 }) {
       <p className="w-[90%] mx-auto">{p6}</p>
 
       <div className="mx-auto mb-4">
-        <Button btnText="Je réserve" />
+        <Button btnText="Je réserve" link="contact" />
       </div>
     </div>
   );

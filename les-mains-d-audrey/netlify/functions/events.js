@@ -1,4 +1,4 @@
-const events = require ('../data/events.json');
+const events = require ('../content/events.json');
 
 exports.handler = async () => {
 	return {

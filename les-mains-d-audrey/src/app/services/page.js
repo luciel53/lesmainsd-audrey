@@ -72,7 +72,7 @@ individuel"
             <p className="w-[90%] mx-auto">SUR DEVIS</p>
 
             <div className="mx-auto mb-4">
-              <Button btnText="Contactez-moi" />
+              <Button btnText="Contactez-moi" link="contact" />
             </div>
           </div>
           <PrestationsCard
@@ -105,7 +105,7 @@ individuel"
             <p className="w-[90%] mx-auto">SUR DEVIS</p>
 
             <div className="mx-auto mb-4">
-              <Button btnText="Contactez-moi" />
+              <Button btnText="Contactez-moi" link="contact" />
             </div>
           </div>
         </div>

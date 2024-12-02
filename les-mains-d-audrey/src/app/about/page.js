@@ -46,13 +46,13 @@ export default function About() {
         </div>
       </div>
       <div className="flex flex-row justify-center gap-12 mb-12">
-        <div className="flex flex-row justify-center  font-italiana text-lg md:text-3xl text-gold bg-lightBG mt-8 px-4 py-2 border border-gold rounded-xl hover:text-lightBG hover:bg-gold hover:opacity-90 drop-shadow-lg transition duration-300 ease-in-out">
+        <div className="flex flex-row justify-center font-italiana text-lg md:text-3xl text-lightBG bg-gold mt-8 px-4 py-2 border border-gold rounded-xl hover:text-gold hover:bg-lightBG hover:opacity-90 drop-shadow-lg transition duration-300 ease-in-out">
           <Link href="/services">
             <button className="">Mes prestations</button>
           </Link>
         </div>
 
-        <div className="flex flex-row justify-center  font-italiana text-lg md:text-3xl text-gold bg-lightBG mt-8 px-4 py-2 border border-gold rounded-xl hover:text-lightBG hover:bg-gold hover:opacity-90 drop-shadow-lg transition duration-300 ease-in-out">
+        <div className="flex flex-row justify-center  font-italiana text-lg md:text-3xl text-lightBG bg-gold mt-8 px-4 py-2 border border-gold rounded-xl hover:text-gold hover:bg-lightBG hover:opacity-90 drop-shadow-lg transition duration-300 ease-in-out">
           <Link href="/contact">
             <button className="">Contactez-moi</button>
           </Link>
