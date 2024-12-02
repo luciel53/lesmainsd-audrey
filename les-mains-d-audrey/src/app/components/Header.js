@@ -55,7 +55,7 @@ export default function Header() {
             unoptimized
             width={400}
             height={400}
-            className="h-24 w-24 lg:h-36 lg:w-36 z-0 drop-shadow-sm"
+            className="h-24 w-24 lg:h-36 lg:w-36 z-0 drop-shadow-sm hover:animate-wiggle-more"
           />
         </Link>
       </div>

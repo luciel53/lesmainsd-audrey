@@ -27,7 +27,7 @@ export default function Prestations() {
           domicile). J’anime également des activités en collectivités
           (bibliothèques...). Pour d’autres demandes,{" "}
           <Link href="/contact">
-            <strong className=" underline">contactez-moi.</strong>
+            <strong className=" underline text-pink hover:text-lightPink">contactez-moi.</strong>
           </Link>{" "}
           Aussi, j&apos;organise des <strong>ateliers de sensibilisation</strong>{" "}
           dans les entreprises autour de la <strong>culture Sourde</strong>.{" "}

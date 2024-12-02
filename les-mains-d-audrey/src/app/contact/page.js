@@ -74,7 +74,7 @@ export default function Contact() {
             alt="Logo de les mains d'Audrey"
             width={400}
             height={400}
-            className=" w-[60%] md:w-[60%] mx-auto drop-shadow-lg"
+            className=" w-[60%] md:w-[60%] mx-auto drop-shadow-lg hover:animate-wiggle-more"
           />
           <p>Les mains d&apos;Audrey</p>
           <p>Facilitatrice de liens Parents-enfant</p>
@@ -208,7 +208,7 @@ export default function Contact() {
             {/* Sender button */}
             <div className="flex justify-center">
               <div className="font-italiana text-lg md:text-3xl text-lightBG bg-gold px-4 py-2 border border-gold rounded-xl hover:text-gold hover:bg-lightBG hover:opacity-90 drop-shadow-lg transition duration-300 ease-in-out">
-                <button>Envoyer</button>
+                <button aria-label="Envoyez votre message">Envoyer</button>
               </div>
             </div>
           </form>

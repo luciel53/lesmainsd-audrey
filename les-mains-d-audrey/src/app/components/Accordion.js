@@ -33,7 +33,7 @@ export default function Accordion({ title, content, isFirst }) {
         </span>
       </button>
       {isOpen && (
-        <div className="flex flex-col justify-between w-80 md:w-[60%] lg:w-[40%] bg-lightBG border-x border-b border-lightPink px-4 py-2">
+        <div className="flex flex-col justify-between w-80 md:w-[60%] lg:w-[40%] bg-lightBG border-x border-b border-lightPink px-4 py-2 animate-flip-down animate-duration-[500ms] animate-ease-out">
           <div className=" whitespace-break-spaces break-words">
             <p className="font-jaldi italic text-justify md:text-xl">
             {content}
@@ -41,7 +41,7 @@ export default function Accordion({ title, content, isFirst }) {
           </div>
           <div className=" self-center">
             <Link href="/services">
-            <button className="text-lightBG bg-gold font-jaldi w-24 md:mr-4 lg:mr-4 mt-3 mb-2 drop-shadow-lg border border-gold rounded-full px-2 hover:text-gold hover:bg-lightBG hover:opacity-90 transition duration-300 ease-in-out">En savoir +</button>
+            <button aria-label="En savoir plus" className="text-lightBG bg-gold font-jaldi w-24 md:mr-4 lg:mr-4 mt-3 mb-2 drop-shadow-lg border border-gold rounded-full px-2 hover:text-gold hover:bg-lightBG hover:opacity-90 transition duration-300 ease-in-out">En savoir +</button>
             </Link>
           </div>
         </div>

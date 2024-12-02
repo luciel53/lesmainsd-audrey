@@ -46,7 +46,7 @@ export default async function Event() {
           réserver votre créneau ci-dessous! Pour toute information,
           n&apos;hésitez pas à{" "}
           <Link href="/contact">
-            <span className="font-jaldi font-bold md:text-xl underline">
+            <span className="font-jaldi font-bold md:text-xl underline text-pink hover:text-lightPink">
               me contacter
             </span>{" "}
           </Link>
