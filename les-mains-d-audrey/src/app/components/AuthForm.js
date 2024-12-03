@@ -11,8 +11,13 @@ const AuthForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    const apiUrl =
+    process.env.NODE_ENV === 'development'
+      ? 'http://localhost:8888/.netlify/functions/auth'
+      : `${window.location.origin}/.netlify/functions/auth`;
+
     // Send auth's informations to the Netlify function
-    const res = await fetch('http://localhost:8888/.netlify/functions/auth', {
+    const res = await fetch(apiUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

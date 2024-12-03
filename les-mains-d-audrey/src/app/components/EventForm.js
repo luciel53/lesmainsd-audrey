@@ -28,8 +28,13 @@ export default function EventForm() {
     image: "/images/pinkframe.png",
     };
 
+    // Utilisation d'une URL dynamique en fonction de l'environnement (production ou développement)
+  const apiUrl = process.env.NODE_ENV === "development"
+  ? "http://localhost:8888/.netlify/functions/eventCreation"
+  : `${window.location.origin}/.netlify/functions/eventCreation`;
+
     // Send data to api (netlify functions)
-    const response = await fetch("http://localhost:8888/.netlify/functions/eventCreation", {
+    const response = await fetch(apiUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

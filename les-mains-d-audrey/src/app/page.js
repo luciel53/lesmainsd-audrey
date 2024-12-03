@@ -73,7 +73,7 @@ export default function Home() {
             alt="Les dernières publications instagram de Les mains d'Audrey"
             width={200}
             height={200}
-            className="w-20 animate-bounce my-5"
+            className=" w-12 md:w-20 animate-bounce my-5"
           />
         </div>
         <InstaFeed />
