@@ -88,7 +88,7 @@ export default function About() {
             height={1200}
             className="mx-auto"
           />
-          <figcaption className="italic font-jaldi text-center">Article publié dans la presse sur Les mains d'Audrey. Entreprise dédiée à la communication parent-bébé à travers le bébé signe.</figcaption>
+          <figcaption className="italic font-jaldi text-center">Article publié dans la presse sur Les mains d&apos;Audrey. Entreprise dédiée à la communication parent-bébé à travers le bébé signe.</figcaption>
         </figure>
       </section>
     </div>

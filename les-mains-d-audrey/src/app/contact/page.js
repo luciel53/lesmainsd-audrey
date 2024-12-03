@@ -76,14 +76,36 @@ export default function Contact() {
             height={400}
             className=" w-[60%] md:w-[60%] mx-auto drop-shadow-lg hover:animate-wiggle-more"
           />
-          <p>Les mains d&apos;Audrey</p>
+          <p>
+            <strong>Les mains d&apos;Audrey</strong>
+          </p>
           <p>Facilitatrice de liens Parents-enfant</p>
-          <p>lesmainsdaudrey44@gmail.com</p>
+          <p>
+            <a
+              href="mailto:lesmainsdaudrey44@gmail.com"
+              className="text-pink hover:underline hover:text-lightPink"
+            >
+              lesmainsdaudrey44@gmail.com
+            </a>
+          </p>
           <p>Saint-Nazaire (et alentours)</p>
-          <p>SMS : 06 75 34 08 67</p>
+          <p>
+            SMS :{" "}
+            <a
+              href="tel:+33675340867"
+              className="text-pink hover:text-lightPink hover:underline"
+            >
+              {" "}
+              06 75 34 08 67
+            </a>
+          </p>
           <p>Retrouvez-moi sur les réseaux sociaux:</p>
           <div className="flex flex-row w-72 mt-2 justify-center">
-            <Link href="https://www.facebook.com/profile.php?id=61558150675264">
+            <Link
+              href="https://www.facebook.com/profile.php?id=61558150675264"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Image
                 src="/images/icons/facebook.png"
                 alt="Icone Facebook"
@@ -92,7 +114,11 @@ export default function Contact() {
                 className="hover:opacity-80"
               />
             </Link>
-            <Link href="https://www.instagram.com/lesmainsdaudrey44/#">
+            <Link
+              href="https://www.instagram.com/lesmainsdaudrey44/#"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Image
                 src="/images/icons/instagram.png"
                 alt="Icone Facebook"
@@ -101,7 +127,11 @@ export default function Contact() {
                 className="hover:opacity-80"
               />
             </Link>
-            <Link href="https://www.linkedin.com/in/audrey-florenceau-les-mains-d-audrey-a79916111/">
+            <Link
+              href="https://www.linkedin.com/in/audrey-florenceau-les-mains-d-audrey-a79916111/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Image
                 src="/images/icons/linkedin.png"
                 alt="Icone Facebook"
@@ -208,7 +238,9 @@ export default function Contact() {
             {/* Sender button */}
             <div className="flex justify-center">
               <div className="font-italiana text-lg md:text-3xl text-lightBG bg-gold px-4 py-2 border border-gold rounded-xl hover:text-gold hover:bg-lightBG hover:opacity-90 drop-shadow-lg transition duration-300 ease-in-out">
-                <button aria-label="Envoyez votre message">Envoyer</button>
+                <button type="submit" aria-label="Envoyez votre message">
+                  Envoyer
+                </button>
               </div>
             </div>
           </form>

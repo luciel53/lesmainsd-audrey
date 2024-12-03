@@ -8,7 +8,11 @@ export default function Footer() {
         {/* Section centrée */}
         <div className="flex flex-col items-center text-center mx-auto mb-4">
           <div className="flex space-x-4 mt-4">
-            <Link href="https://www.facebook.com/profile.php?id=61558150675264">
+            <Link
+              href="https://www.facebook.com/profile.php?id=61558150675264"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Image
                 src="/images/icons/facebook.png"
                 alt="Icone Facebook"
@@ -17,7 +21,11 @@ export default function Footer() {
                 className="hover:opacity-80"
               />
             </Link>
-            <Link href="https://www.instagram.com/lesmainsdaudrey44/#">
+            <Link
+              href="https://www.instagram.com/lesmainsdaudrey44/#"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Image
                 src="/images/icons/instagram.png"
                 alt="Icone Instagram"
@@ -26,7 +34,11 @@ export default function Footer() {
                 className="hover:opacity-80"
               />
             </Link>
-            <Link href="https://www.linkedin.com/in/audrey-florenceau-les-mains-d-audrey-a79916111/">
+            <Link
+              href="https://www.linkedin.com/in/audrey-florenceau-les-mains-d-audrey-a79916111/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Image
                 src="/images/icons/linkedin.png"
                 alt="Icone LinkedIn"
@@ -46,10 +58,14 @@ export default function Footer() {
         <div className="flex flex-row items-end right-4 md:absolute overflow-hidden mb-4 -mt-8 md:mt-0">
           <p>Réalisé par</p>
           <div className="h-16 overflow-hidden">
-            <Link href="https://www.eyetopixel.com">
+            <Link
+              href="https://www.eyetopixel.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Image
                 src="/images/eyetopixel.png"
-                alt="Créateur du site web"
+                alt="Créateur du site web: Eyetopixel, développeur web freelance"
                 width={120}
                 height={120}
                 className="object-cover"
