@@ -43,12 +43,12 @@ export default function Home() {
         <div>
           <Accordion
             title="Ateliers bébé signe en individuel"
-            content="Des sessions privées à votre domicile pour apprendre le bébé signe à votre rythme. Pour une famille (2 parents et bébé)"
+            content="Des sessions privées à votre domicile pour apprendre le bébé signe à votre rythme. Pour une famille."
             isFirst={true}
           />
           <Accordion
             title="Ateliers bébé signe en collectif "
-            content="Ateliers Bébé Signe à votre domicile, mais à plusieurs familles (3 familles maximum). Parfait pour faire des économies et apprendre le bébé signe de façon conviviale."
+            content="Ateliers Bébé Signe à votre domicile, mais à plusieurs familles (2 à 4 familles maximum). Parfait pour faire des économies et apprendre le bébé signe de façon conviviale."
           />
           <Accordion
             title="Ateliers bébé signe en collectivité (bibliothèques, écoles, crèches...)"
@@ -64,7 +64,7 @@ export default function Home() {
         </div>
       </section>
       <section className="flex flex-col justify-center items-center md:mt-28">
-        <h2 className=" font-italiana text-xl md:text-3xl lg:text-4xl mb-3 lg:mb-6">
+        <h2 className=" font-italiana font-semibold text-xl md:text-3xl lg:text-4xl mb-3 lg:mb-6">
           Retrouvez mes dernières publications instagram !
         </h2>
         <div>

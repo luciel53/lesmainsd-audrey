@@ -79,7 +79,7 @@ export default function Contact() {
           <p>
             <strong>Les mains d&apos;Audrey</strong>
           </p>
-          <p>Facilitatrice de liens Parents-enfant</p>
+          <p>Facilitatrice de liens parents-bébés</p>
           <p>
             <a
               href="mailto:lesmainsdaudrey44@gmail.com"
@@ -88,7 +88,7 @@ export default function Contact() {
               lesmainsdaudrey44@gmail.com
             </a>
           </p>
-          <p>Saint-Nazaire (et alentours)</p>
+          <p>Sainte-Anne-sur-Brivet (et alentours)</p>
           <p>
             SMS :{" "}
             <a

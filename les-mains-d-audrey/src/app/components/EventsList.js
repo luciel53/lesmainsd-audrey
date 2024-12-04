@@ -1,5 +1,3 @@
-
-
 import Image from "next/image";
 import { useEffect, useState } from "react";
 // import { getEvents } from "./getEvents";
@@ -25,7 +23,9 @@ export default function EventsList() {
   // delete an event
   const handleDelete = (indexToDelete) => {
     // filter the event to delete and update state
-    setEvents((prevEvent) => prevEvent.filter((_, index) => index !== indexToDelete));
+    setEvents((prevEvent) =>
+      prevEvent.filter((_, index) => index !== indexToDelete)
+    );
 
     // call the api to delete in the json file
     fetch("/api/events", {
@@ -33,12 +33,12 @@ export default function EventsList() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ index: indexToDelete }),
     })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Error during deletion in the server side");
-      }
-    })
-    .catch((error) => console.error("Error when deleting event: ", error));
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error during deletion in the server side");
+        }
+      })
+      .catch((error) => console.error("Error when deleting event: ", error));
   };
 
   return (
@@ -53,26 +53,20 @@ export default function EventsList() {
           <div className="flex flex-col justify-between mt-2 font-jaldi">
             {events.map((event, index) => {
               return (
-              <div key={index} className="flex flex-row justify-between">
-                <p>{event.title}</p>
-                <div className="flex flex-row ">
-                  <Image
-                    src="/images/icons/trash.png"
-                    width={30}
-                    height={30}
-                    onClick={() => handleDelete(index)}
-                    alt="Supprimer l'évènement"
-                    className="mr-2 w-6 h-6 cursor-pointer"
-                  />
-                  <Image
-                    src="/images/icons/update.png"
-                    width={30}
-                    height={30}
-                    alt="Modifier l'évènement"
-                    className="w-6 h-6"
-                  />
+                <div key={index} className="flex flex-row justify-between mb-2">
+                  <p className="w-52">{event.title}</p>
+                  <p>{event.date}</p>
+                  <div className="flex flex-row ">
+                    <Image
+                      src="/images/icons/trash.png"
+                      width={30}
+                      height={30}
+                      onClick={() => handleDelete(index)}
+                      alt="Supprimer l'évènement"
+                      className="mr-2 w-6 h-6 cursor-pointer"
+                    />
+                  </div>
                 </div>
-              </div>
               );
             })}
           </div>

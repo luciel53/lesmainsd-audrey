@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 const users = [
   {
     username: "admin",
-    passwordHash: bcrypt.hashSync("password", 10),
+    passwordHash: bcrypt.hashSync("aAnuadxroery$44", 10),
   },
 ];
 
@@ -25,6 +25,18 @@ exports.handler = async (event, context) => {
 
   if (event.httpMethod === "POST") {
     try {
+      // Check secret token key
+      if (!process.env.JWT_SECRET) {
+        console.error("SECRET_KEY is missing");
+        return {
+          statusCode: 500,
+          headers,
+          body: JSON.stringify({
+            message: "Server error: SECRET_KEY missing",
+          }),
+        };
+      }
+      
       const { username, password } = JSON.parse(event.body);
 
       const user = users.find((user) => user.username === username);
