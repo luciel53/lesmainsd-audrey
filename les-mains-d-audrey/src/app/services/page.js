@@ -59,7 +59,7 @@ individuel"
             p3="45 minutes"
             p4="30€ L'UNITÉ - 100€ LE CYCLE"
           />
-          <div className="flex flex-col bg-gradient-to-tr from-lightBG via-pink-50 to-veryLightPink border border-lightPink rounded-3xl h-96 lg:w-80 xl:w-96 justify-between mt-1 drop-shadow-md transition-transform duration-200 ease-in-out hover:scale-105 hover:drop-shadow-xl">
+          <div className="flex flex-col bg-gradient-to-tr from-lightBG via-pink-50 to-veryLightPink border border-lightPink rounded-3xl h-96 lg:h-[450px] lg:w-80 xl:w-96 justify-between mt-1 drop-shadow-md transition-transform duration-200 ease-in-out hover:scale-105 hover:drop-shadow-xl">
             <h2 className="text-center font-italiana font-semibold text-pink w-60 mx-auto text-2xl md:text-3xl mt-4 border-b-2 border-pink pb-2 !important">
               L’heure de conte signé
             </h2>
@@ -89,7 +89,7 @@ individuel"
             p1="Sur mesure selon les saisons"
             p2="En collectif (min 3 familles - max 5) : 30€ par famille"
           />
-          <div className="flex flex-col bg-gradient-to-tr from-lightBG via-pink-50 to-veryLightPink border border-lightPink rounded-3xl h-96 lg:w-80 xl:w-96 justify-between mt-1 drop-shadow-md transition-transform duration-200 ease-in-out hover:scale-105 hover:drop-shadow-xl">
+          <div className="flex flex-col bg-gradient-to-tr from-lightBG via-pink-50 to-veryLightPink border border-lightPink rounded-3xl h-96 lg:h-[450px] lg:w-80 xl:w-96 justify-between mt-1 drop-shadow-md transition-transform duration-200 ease-in-out hover:scale-105 hover:drop-shadow-xl">
             <h2 className="text-center font-italiana font-semibold text-pink w-60 mx-auto text-2xl md:text-3xl mt-4 border-b-2 border-pink pb-2 !important">
             Autre demande
             </h2>

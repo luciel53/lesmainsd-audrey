@@ -5,8 +5,8 @@ export default function PrestationsCard({ title, p1, p2, p3, p4, p5, p6 }) {
   const prestations = [p1, p2, p3, p4, p5, p6];
 
   return (
-    <div className="flex flex-col bg-gradient-to-tr from-lightBG via-pink-50 to-veryLightPink border border-lightPink rounded-3xl h-96 lg:w-80 xl:w-96 justify-between mt-1 drop-shadow-md transition-transform duration-200 ease-in-out hover:scale-105 hover:drop-shadow-xl">
-      <h2 className="text-center font-italiana text-pink font-semibold w-[80%] mx-auto text-2xl md:text-3xl mt-4 border-b-2 border-pink pb-2">
+    <div className="flex flex-col bg-gradient-to-tr from-lightBG via-pink-50 to-veryLightPink border border-lightPink rounded-3xl h-96 lg:h-[450px] lg:w-80 xl:w-96 justify-between mt-1 drop-shadow-md transition-transform duration-200 ease-in-out hover:scale-105 hover:drop-shadow-xl">
+      <h2 className="text-center font-italiana text-pink font-semibold w-[80%] mx-auto text-2xl xl:text-3xl mt-4 border-b-2 border-pink pb-2">
         {title}
       </h2>
 
@@ -24,7 +24,7 @@ export default function PrestationsCard({ title, p1, p2, p3, p4, p5, p6 }) {
         )}
       </ul>
 
-      <div className="mx-auto mb-6">
+      <div className="mx-auto mb-4">
         <Button
           btnText="Je réserve"
           link="contact"
