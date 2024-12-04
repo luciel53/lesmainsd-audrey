@@ -59,7 +59,7 @@ const AuthForm = () => {
         />
       </div>
       <button className='bg-gold w-36 py-1 mx-auto my-8 rounded-xl text-lightBG font-italiana text-xl hover:text-gold hover:bg-white drop-shadow-lg' type="submit">Se connecter</button>
-      {message && <p>{message}</p>}
+      {message && <p className='mx-auto my-4 text-pink'>{message}</p>}
     </form>
   );
 };
