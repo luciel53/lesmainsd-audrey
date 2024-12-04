@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 const users = [
   {
     username: "admin",
-    passwordHash: bcrypt.hashSync("aAnuadxroery$44", 10),
+    passwordHash: bcrypt.hashSync(process.env.ADMIN_PASSWORD, 10),
   },
 ];
 
@@ -36,7 +36,7 @@ exports.handler = async (event, context) => {
           }),
         };
       }
-      
+
       const { username, password } = JSON.parse(event.body);
 
       const user = users.find((user) => user.username === username);

@@ -8,6 +8,3 @@
 
 [functions]
   directory = "netlify/functions"
-
-[build.environment]
-  JWT_SECRET = "ta_clé_secrète"
