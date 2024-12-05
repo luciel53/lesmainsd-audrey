@@ -13,8 +13,6 @@ exports.handler = async function (event, context) {
 
   try {
     const body = JSON.parse(event.body);
-    console.log("Données reçues: ", body);
-    // console.log("Image reçue : ", image);
 
     const { title, date, location, time, link, image } = body;
 
@@ -26,12 +24,10 @@ exports.handler = async function (event, context) {
       };
     };
     const imagePath = image && typeof image === "string" ? image : "/images/pinkframe.png";
-    console.log("IMAGEPATH", imagePath);
+
     // Connection to the database
     const db = await connectToDatabase();
     const eventsCollection = db.collection("Events");
-    console.log("database: ", db);
-    console.log("events collection: ", eventsCollection);
 
     // Create a new event
     const newEvent = {
@@ -43,8 +39,6 @@ exports.handler = async function (event, context) {
 
     image: imagePath,
     };
-
-    console.log("NEW EVENT", newEvent);
 
     const result = await eventsCollection.insertOne(newEvent);
 

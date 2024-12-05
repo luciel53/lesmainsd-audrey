@@ -16,18 +16,19 @@ export default function EventsList() {
     fetchEvents();
   }, []); // Le tableau vide [] assure que l'effet se lance uniquement au montage
 
-  // Supprimer un événement de l'état
-  const handleDelete = (indexToDelete) => {
-    // Filtrer l'événement à supprimer et mettre à jour l'état
-    setEvents((prevEvent) =>
-      prevEvent.filter((_, index) => index !== indexToDelete)
-    );
+  // To delete an event from database
+  const handleDelete = (eventId) => {
+    console.log("IDDDDDD", eventId);
 
-    // Appeler l'API pour supprimer l'événement du backend
-    fetch("/api/events", {
+    // Sort an event to delete and update the state
+    setEvents((prevEvent) =>
+      prevEvent.filter((event) => event._id !== eventId));
+
+    // Call the API to delete the event from database
+    fetch("/.netlify/functions/deleteEvent", {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ index: indexToDelete }),
+      body: JSON.stringify({ index: eventId }),
     })
       .then((response) => {
         if (!response.ok) {
@@ -53,7 +54,7 @@ export default function EventsList() {
                   src="/images/icons/trash.png"
                   width={30}
                   height={30}
-                  onClick={() => handleDelete(index)}
+                  onClick={() => handleDelete(event._id)}
                   alt="Supprimer l'évènement"
                   className="mr-2 w-6 h-6 cursor-pointer"
                 />
