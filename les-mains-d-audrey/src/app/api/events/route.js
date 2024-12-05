@@ -1,58 +1,41 @@
-import { join } from "path";
-import { readFileSync, writeFileSync } from "fs";
+// // /api/events.js
+// import { connectToDatabase } from "../../../../netlify/functions/db";
+// import { ObjectId } from"mongodb";
 
-export async function GET(request) {
-  try {
-    const filePath = join(process.cwd(), "content", "events.json");
+// export default async function handler(req, res) {
+//   const db = await connectToDatabase();
+//   const eventsCollection = db.collection("Events");
 
-    // read the json file
-    const fileContent = readFileSync(filePath, "utf-8");
-    const events = JSON.parse(fileContent);
+//   switch (req.method) {
+//     case "GET":
+//       try {
+//         const events = await eventsCollection.find({}).sort({ date: 1 }).toArray();
+//         return res.status(200).json(events);
+//       } catch (error) {
+//         console.error("Error fetching events:", error);
+//         return res.status(500).json({ message: "Internal server error" });
+//       }
 
-    return new Response(JSON.stringify(events), {
-      headers: { "Content-Type": "application/json" },
-    });
-  } catch (error) {
-    return new Response(
-      JSON.stringify({ error: "Erreur lors de la lecture des évènements" }),
-      { status: 500 }
-    );
-  }
-}
+//     case "DELETE":
+//       try {
+//         const { id } = req.body;
+//         if (!id) {
+//           return res.status(400).json({ message: "Missing event ID" });
+//         }
 
-export async function DELETE(request) {
-  try {
-    const filePath = join(process.cwd(), "content", "events.json");
+//         const result = await eventsCollection.deleteOne({ _id: new ObjectId(id) });
+//         if (result.deletedCount === 0) {
+//           return res.status(404).json({ message: "Event not found" });
+//         }
 
-    // Lire le corps de la requête pour récupérer l'index
-    const body = await request.json();
-    const { index } = body;
+//         return res.status(200).json({ message: "Event deleted successfully" });
+//       } catch (error) {
+//         console.error("Error deleting event:", error);
+//         return res.status(500).json({ message: "Internal server error" });
+//       }
 
-	if (index === undefined) {
-		return new Response(
-			JSON.stringify({ error: "missing index" }),
-			{ status: 400 }
-		);
-	}
-
-    // Lire le fichier JSON
-    const fileContent = readFileSync(filePath, "utf-8");
-    const events = JSON.parse(fileContent);
-
-    // Supprimer l'événement à l'index donné
-    const updatedEvents = events.filter((_, i) => i !== index);
-
-    // Écrire la nouvelle liste dans le fichier JSON
-    writeFileSync(filePath, JSON.stringify(updatedEvents, null, 2));
-
-    return new Response(JSON.stringify({ success: true }), {
-      headers: { "Content-Type": "application/json" },
-    });
-  } catch (error) {
-    console.error("Erreur lors de la suppression :", error);
-    return new Response(
-      JSON.stringify({ error: "Erreur lors de la suppression" }),
-      { status: 500 }
-    );
-  }
-}
+//     default:
+//       res.setHeader("Allow", ["GET", "DELETE"]);
+//       res.status(405).json({ message: `Method ${req.method} Not Allowed` });
+//   }
+// }

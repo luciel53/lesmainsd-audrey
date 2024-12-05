@@ -7,7 +7,6 @@ export default function EventForm() {
   const [location, setLocation] = useState("");
   const [time, setTime] = useState("");
   const [link, setLink] = useState("");
-  const [image, setImage] = useState(null);
   const [error, setError] = useState("");
 
   // Send form data
@@ -20,18 +19,21 @@ export default function EventForm() {
     }
 
     const eventData = {
-    title,
-    date,
-    location,
-    time,
-    link,
-    image: "/images/pinkframe.png",
+      title,
+      date,
+      location,
+      time,
+      link,
+      image: "/images/pinkframe.png",
     };
 
-    // Utilisation d'une URL dynamique en fonction de l'environnement (production ou développement)
-  const apiUrl = process.env.NODE_ENV === "development"
-  ? "http://localhost:8888/.netlify/functions/eventCreation"
-  : `${window.location.origin}/.netlify/functions/eventCreation`;
+    console.log("Données envoyées :", eventData);
+
+    // Use a dynamic URL depending on the environment (dev or prod
+    const apiUrl =
+      process.env.NODE_ENV === "development"
+        ? "http://localhost:8888/.netlify/functions/eventCreation"
+        : `${window.location.origin}/.netlify/functions/eventCreation`;
 
     // Send data to api (netlify functions)
     const response = await fetch(apiUrl, {
@@ -41,18 +43,18 @@ export default function EventForm() {
       },
       body: JSON.stringify(eventData),
     });
+    console.log("response:", response);
 
     const result = await response.json();
-
+    console.log("RESULT:", result);
     if (response.ok) {
       alert("Événement créé avec succès");
-      // Réinitialiser le formulaire
+      // Reset the form
       setTitle("");
       setDate("");
       setLocation("");
       setTime("");
       setLink("");
-      setImage(null);
       setError("");
     } else {
       setError(result.message || "Erreur lors de la création de l'événement");
@@ -143,7 +145,6 @@ export default function EventForm() {
             className="w-full p-1 border border-gray-300 rounded-md"
           />
         </div>
-
 
         <div className="text-center my-3">
           <button

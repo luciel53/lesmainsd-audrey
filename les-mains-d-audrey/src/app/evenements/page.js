@@ -104,7 +104,7 @@ export default async function Event() {
                 </div>
                 <Link
                   href={`${
-                    event.link && event.link.startsWith("http")
+                    typeof event.link === "string" && event.link.startsWith("http")
                       ? event.link
                       : "#"
                   }`}
