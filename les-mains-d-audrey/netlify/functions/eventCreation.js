@@ -3,7 +3,7 @@ const { join } = require("path");
 const { connectToDatabase } = require("./db");
 
 exports.handler = async function (event, context) {
-  // Vérifier si c'est une requête POST
+  // Check if it s a post request
   if (event.httpMethod !== "POST") {
     return {
       statusCode: 405,

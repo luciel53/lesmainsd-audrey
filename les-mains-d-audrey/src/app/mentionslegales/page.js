@@ -29,7 +29,7 @@ export default function LegalMentions() {
               accompagnée par :
             </p>
             <p className="italic font-bold">L&apos;Ouvre-boites</p>
-            <p>446 Esplanade Anna Marly 44600</p>
+            <p>6 Esplanade Anna Marly 44600</p>
             <p>Saint-Nazaire - tél. : 02.28.21.65.10 </p>
             <p>N° Siren : 449 989 573 00075 FR40449989573 </p>
           </div>
