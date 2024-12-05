@@ -1,5 +1,4 @@
-import fs from "fs";
-import path from "path";
+
 
 // Function to call the data from netlify
 export async function getEvents() {
