@@ -22,9 +22,10 @@ exports.handler = async function (event, context) {
 
     const eventsCollection = db.collection("Events");
     console.log("Database connected: ", db);
+    console.log("Collection: ", eventsCollection);
 
     // Récupérer les événements depuis la base de données
-    const events = await eventsCollection.find().toArray();
+    const events = await eventsCollection.find({}).toArray();
     console.log("Événements récupérés: ", events);
 
     return {
