@@ -1,15 +1,13 @@
+"use client";
+
 import Link from "next/link";
 import Cloud from "../components/Cloud";
 import Image from "next/image";
 import { getEvents } from "../components/getEvents";
+import { useState, useEffect } from "react";
 
-export const metadata = {
-  title: "Les mains d'Audrey - Ateliers Bébé Signe",
-  description:
-    "Découvrez les évènements bébé signe pour renforcer la communication entre parents et bébés. Ateliers individuels, collectifs, en collectivités et en entreprises sur la culture Sourde.",
-};
 
-// function to formate the dates
+// function to format the dates
 function formatDate(dateString) {
   const date = new Date(dateString);
   return new Intl.DateTimeFormat("fr-FR", {
@@ -24,9 +22,18 @@ function sortEventsByDate(events) {
   return events.sort((a, b) => new Date(a.date) - new Date(b.date));
 }
 
-export default async function Event() {
-  const events = await getEvents(); // loads the events
-  console.log("évènements récupérés", events);
+export default function Event() {
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      const eventsList = await getEvents(); // loads the events
+      setEvents(eventsList);
+    };
+
+    fetchEvents();
+  }, []); // Dependency array is empty to load events once when component mounts
+
   const sortedEvents = sortEventsByDate(events);
 
   return (
@@ -56,68 +63,72 @@ export default async function Event() {
       </section>
       {/* Events Calendar */}
       <section>
-        {sortedEvents.map((event) => (
-          <div
-            key={event.title}
-            className="flex flex-row bg-lightBG rounded-xl w-[95%] lg:w-[65%] xl:w-[50%] h-32 md:h-36 mx-auto border border-lightPink drop-shadow-lg mb-4 transition-transform duration-200 ease-in-out hover:scale-105 hover:drop-shadow-lg"
-          >
-            {/* Left part : Image & Date */}
-            <div className=" flex flex-row justify-center items-center relative z-0 w-48 h-full overflow-hidden">
-              <Image
-                src={event.image}
-                alt={`${event.title} organisé par les mains d'Audrey - Bébé signe`}
-                fill
-                className="object-cover"
-              />
-              <div className="flex flex-col z-10 justify-center items-center h-16 w-16 opacity-80">
-                <span className="font-italiana text-sm md:text-md xl:text-lg w-16 text-center md:-mt-1 lg:-mt-1 font-bold">
-                  {formatDate(event.date)}
-                </span>
-              </div>
-            </div>
-            {/* Informations part (location, hour, title, link...) */}
-            <div className="px-3 flex flex-col justify-around xl:w-[75%]">
-              <h4 className="font-italiana text-pink md:text-xl xl:text-2xl mb-2 w-60 md:w-96 xl:w-[500px] overflow-y-auto h-12 ">
-                {event.title}
-              </h4>
-              <div className="flex flex-row w-60 md:w-[450px] xl:w-[530px]">
+        {sortedEvents.length > 0 ? (
+          sortedEvents.map((event) => (
+            <div
+              key={event.title}
+              className="flex flex-row bg-lightBG rounded-xl w-[95%] lg:w-[65%] xl:w-[50%] h-32 md:h-36 mx-auto border border-lightPink drop-shadow-lg mb-4 transition-transform duration-200 ease-in-out hover:scale-105 hover:drop-shadow-lg"
+            >
+              {/* Left part : Image & Date */}
+              <div className="flex flex-row justify-center items-center relative z-0 w-48 h-full overflow-hidden">
                 <Image
-                  src="/images/icons/location.png"
-                  alt="Lieu de l'évènement organisé par les mains d'Audrey"
-                  width={50}
-                  height={50}
-                  className="h-5 md:h-8 lg:h-6 w-5 md:w-8 lg:w-6 mr-2"
+                  src={event.image}
+                  alt={`${event.title} organisé par les mains d'Audrey - Bébé signe`}
+                  fill
+                  className="object-cover"
                 />
-                <p className="font-jaldi xl:text-lg md:w-96 xl:w-[500px] overflow-y-auto h-12">
-                  {event.location}
-                </p>
+                <div className="flex flex-col z-10 justify-center items-center h-16 w-16 opacity-80">
+                  <span className="font-italiana text-sm md:text-md xl:text-lg w-16 text-center md:-mt-1 lg:-mt-1 font-bold">
+                    {formatDate(event.date)}
+                  </span>
+                </div>
               </div>
-              <div className="flex flex-row w-52 md:w-80 xl:w-[530px] mr-0 lg:mr-10 justify-between">
-                <div className="flex flex-row">
+              {/* Informations part (location, hour, title, link...) */}
+              <div className="px-3 flex flex-col justify-around xl:w-[75%]">
+                <h4 className="font-italiana text-pink md:text-xl xl:text-2xl mb-2 w-60 md:w-96 xl:w-[500px] overflow-y-auto h-12 ">
+                  {event.title}
+                </h4>
+                <div className="flex flex-row w-60 md:w-[450px] xl:w-[530px]">
                   <Image
-                    src="/images/icons/clock.png"
-                    alt="Heure de l'évènement organisé par les mains d'Audrey"
+                    src="/images/icons/location.png"
+                    alt="Lieu de l'évènement organisé par les mains d'Audrey"
                     width={50}
                     height={50}
                     className="h-5 md:h-8 lg:h-6 w-5 md:w-8 lg:w-6 mr-2"
                   />
-                  <p className="font-jaldi md:text-lg">{event.time}</p>
+                  <p className="font-jaldi xl:text-lg md:w-96 xl:w-[500px] overflow-y-auto h-12">
+                    {event.location}
+                  </p>
                 </div>
-                <Link
-                  href={`${
-                    typeof event.link === "string" && event.link.startsWith("http")
-                      ? event.link
-                      : "#"
-                  }`}
-                >
-                  <button className="bg-gold text-lightBG mt-3 mb-2 xl:mb-4 xl:mr-10 border border-gold rounded-full font-italiana px-2 hover:text-gold hover:bg-lightBG">
-                    Je réserve
-                  </button>
-                </Link>
+                <div className="flex flex-row w-52 md:w-80 xl:w-[530px] mr-0 lg:mr-10 justify-between">
+                  <div className="flex flex-row">
+                    <Image
+                      src="/images/icons/clock.png"
+                      alt="Heure de l'évènement organisé par les mains d'Audrey"
+                      width={50}
+                      height={50}
+                      className="h-5 md:h-8 lg:h-6 w-5 md:w-8 lg:w-6 mr-2"
+                    />
+                    <p className="font-jaldi md:text-lg">{event.time}</p>
+                  </div>
+                  <Link
+                    href={`${
+                      typeof event.link === "string" && event.link.startsWith("http")
+                        ? event.link
+                        : "#"
+                    }`}
+                  >
+                    <button className="bg-gold text-lightBG mt-3 mb-2 xl:mb-4 xl:mr-10 border border-gold rounded-full font-italiana px-2 hover:text-gold hover:bg-lightBG">
+                      Je réserve
+                    </button>
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))
+        ) : (
+          <p className="text-center font-jaldi text-lg">Aucun événement disponible pour le moment.</p>
+        )}
       </section>
     </div>
   );
