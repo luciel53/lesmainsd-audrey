@@ -67,7 +67,7 @@ export default function Contact() {
         Contactez-moi
       </h1>
       <Cloud />
-      <div className="flex flex-wrap-reverse font-jaldi relative z-10 md:text-xl lg:flex-row justify-evenly mx-40">
+      <div className="flex flex-col-reverse items-center mx-auto  font-jaldi relative z-10 md:text-xl lg:flex-row justify-evenly lg:mx-40">
         <div className="md:mt-8 mx-4">
           <Image
             src="/images/logo.png"
