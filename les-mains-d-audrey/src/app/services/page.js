@@ -21,10 +21,12 @@ export default function Prestations() {
         <p className="mt-10 mb-4 w-80 md:w-[60%] lg:w-[60%] mx-auto text-justify font-jaldi md:text-xl">
           Je vous propose différents ateliers parents-enfants ludiques. Vous
           vous initierez aux <strong>signes associés à la parole</strong> en
-          chansons par exemple. Différents thèmes sont possibles. Les ateliers sont <strong>conviviaux</strong> et{" "}
-          <em>participatifs</em>. Réalisables <strong>individuellement</strong>{" "}
-          ou <strong>collectivement</strong>. J’anime également des activités en collectivités
-          (médiathèques, écoles, crèches...). Pour d’autres demandes,{" "}
+          chansons par exemple. Différents thèmes sont possibles. Les ateliers
+          sont <strong>conviviaux</strong> et <em>participatifs</em>.
+          Réalisables <strong>individuellement</strong> ou{" "}
+          <strong>collectivement</strong>. J’anime également des activités en
+          collectivités (médiathèques, écoles, crèches...). Pour d’autres
+          demandes,{" "}
           <Link href="/contact">
             <strong className=" underline text-pink hover:text-lightPink">
               contactez-moi.
@@ -32,8 +34,14 @@ export default function Prestations() {
           </Link>{" "}
           Aussi, j&apos;organise des{" "}
           <strong>ateliers de sensibilisation</strong> dans les entreprises
-          autour de la <strong>culture Sourde</strong>.{" "}
-          Vous pouvez consulter mon calendrier d&apos;évènements <Link href="/evenements" className="font-bold underline text-pink hover:text-lightPink" >ICI</Link>
+          autour de la <strong>culture Sourde</strong>. Vous pouvez consulter
+          mon calendrier d&apos;évènements{" "}
+          <Link
+            href="/evenements"
+            className="font-bold underline text-pink hover:text-lightPink"
+          >
+            ICI
+          </Link>
         </p>
       </section>
       {/* Grid */}
@@ -63,16 +71,19 @@ individuel"
             <h2 className="text-center font-italiana font-semibold text-pink w-60 mx-auto text-2xl md:text-3xl mt-4 border-b-2 border-pink pb-2 !important">
               L’heure de conte signé
             </h2>
-            <div className="flex flex-row justify-center items-center text-justify">
-            <FaCheckCircle className=" text-gray-700 w-4 h-4 flex-shrink-0 ml-5" />
+            <div>
+              <div className="flex flex-row justify-center items-center text-justify mb-2">
+                <FaCheckCircle className=" text-gray-700 w-4 h-4 flex-shrink-0 ml-5" />
 
-            <p className="w-[80%] mx-auto  text-gray-700">
-              Chez les médiathèques, en collectivité (écoles, crèches,
-              périscolaires, etc.)
-            </p></div>
-            <div className="flex flex-row justify-center items-center text-justify">
-            <FaCheckCircle className=" text-gray-700 w-4 h-4 flex-shrink-0 ml-5" />
-            <p className="w-[80%] mx-auto  text-gray-700">SUR DEVIS</p>
+                <p className="w-[80%] mx-auto  text-gray-700">
+                  Chez les médiathèques, en collectivité (écoles, crèches,
+                  périscolaires, etc.)
+                </p>
+              </div>
+              <div className="flex flex-row justify-center items-center text-justify">
+                <FaCheckCircle className=" text-gray-700 w-4 h-4 flex-shrink-0 ml-5" />
+                <p className="w-[80%] mx-auto  text-gray-700">SUR DEVIS</p>
+              </div>
             </div>
             <div className="mx-auto mb-4">
               <Button btnText="Contactez-moi" link="contact" />
@@ -91,25 +102,27 @@ individuel"
           />
           <div className="flex flex-col bg-gradient-to-tr from-lightBG via-pink-50 to-veryLightPink border border-lightPink rounded-3xl h-96 lg:h-[450px] lg:w-80 xl:w-96 justify-between mt-1 drop-shadow-md transition-transform duration-200 ease-in-out hover:scale-105 hover:drop-shadow-xl">
             <h2 className="text-center font-italiana font-semibold text-pink w-60 mx-auto text-2xl md:text-3xl mt-4 border-b-2 border-pink pb-2 !important">
-            Autre demande
+              Autre demande
             </h2>
-            <div className="flex flex-row justify-center items-center text-justify">
-            <FaCheckCircle className=" text-gray-700 w-4 h-4 flex-shrink-0 ml-5" />
+            <div>
+              <div className="flex flex-row justify-center items-center text-justify mb-2">
+                <FaCheckCircle className=" text-gray-700 w-4 h-4 flex-shrink-0 ml-5" />
 
-            <p className="w-[80%] mx-auto  text-gray-700">
-            Je m&apos;adapte en vous proposant des activités sur-mesure. Si vous
-              êtes intéressé, vous pouvez me contacter pour qu&apos;on en parle.
-
-            </p></div>
-            <div className="flex flex-row justify-center items-center text-justify">
-            <FaCheckCircle className=" text-gray-700 w-4 h-4 flex-shrink-0 ml-5" />
-            <p className="w-[80%] mx-auto  text-gray-700">SUR DEVIS</p>
+                <p className="w-[80%] mx-auto  text-gray-700">
+                  Je m&apos;adapte en vous proposant des activités sur-mesure.
+                  Si vous êtes intéressé, vous pouvez me contacter pour
+                  qu&apos;on en parle.
+                </p>
+              </div>
+              <div className="flex flex-row justify-center items-center text-justify">
+                <FaCheckCircle className=" text-gray-700 w-4 h-4 flex-shrink-0 ml-5" />
+                <p className="w-[80%] mx-auto  text-gray-700">SUR DEVIS</p>
+              </div>
             </div>
             <div className="mx-auto mb-4">
               <Button btnText="Contactez-moi" link="contact" />
             </div>
           </div>
-
         </div>
       </section>
     </div>
