@@ -4,14 +4,14 @@ import { useEffect } from "react";
 
 export default function InstaFeed() {
   useEffect(() => {
-    // Chargez le script Elfsight uniquement côté client
+    // Load the script Elfsight (clientside)
     const script = document.createElement("script");
     script.src = "https://static.elfsight.com/platform/platform.js";
     script.async = true;
     document.body.appendChild(script);
 
     return () => {
-      // Nettoyer le script si nécessaire
+      // clean up
       document.body.removeChild(script);
     };
   }, []);

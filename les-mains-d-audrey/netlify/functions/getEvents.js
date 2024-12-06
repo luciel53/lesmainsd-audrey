@@ -1,7 +1,7 @@
 const { connectToDatabase } = require("./db");
 
 exports.handler = async function (event, context) {
-  // On vérifie ici si la méthode HTTP est GET
+  // Check if HTTP method is GET
   if (event.httpMethod !== "GET") {
     return {
       statusCode: 405,
@@ -10,7 +10,7 @@ exports.handler = async function (event, context) {
   }
 
   try {
-    // Connexion à la base de données
+    // Connection to the database
     const db = await connectToDatabase();
     if (!db) {
       console.log("Erreur de connexion à la base de données.");
@@ -24,13 +24,13 @@ exports.handler = async function (event, context) {
     console.log("Database connected: ", db);
     console.log("Collection: ", eventsCollection);
 
-    // Récupérer les événements depuis la base de données
+    // Recover the events from db
     const events = await eventsCollection.find({}).toArray();
     console.log("Événements récupérés: ", events);
 
     return {
       statusCode: 200,
-      body: JSON.stringify(events),  // Retourne les événements au client
+      body: JSON.stringify(events),
     };
   } catch (err) {
     console.error("Error occurred: ", err);
