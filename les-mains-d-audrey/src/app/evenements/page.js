@@ -25,7 +25,8 @@ function sortEventsByDate(events) {
 }
 
 export default async function Event() {
-  const events = await getEvents(); // loads the events from json file
+  const events = await getEvents(); // loads the events
+  console.log("évènements récupérés", events);
   const sortedEvents = sortEventsByDate(events);
 
   return (

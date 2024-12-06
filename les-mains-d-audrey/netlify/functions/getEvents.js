@@ -4,7 +4,7 @@ exports.handler = async function (event, context) {
   // On vérifie ici si la méthode HTTP est GET
   if (event.httpMethod !== "GET") {
     return {
-      statusCode: 405,  // Méthode non autorisée
+      statusCode: 405,
       body: JSON.stringify({ message: "Method Not Allowed" }),
     };
   }

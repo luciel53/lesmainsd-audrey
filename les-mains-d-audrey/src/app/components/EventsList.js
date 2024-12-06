@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 import { getEvents } from "./getEvents";
 
 export default function EventsList() {
-  // Initialiser l'état des événements
+  // setting events state
   const [events, setEvents] = useState([]);
 
-  // Utiliser useEffect pour charger les événements au montage du composant
+  // use useEffect to load the events when component is loading
   useEffect(() => {
     const fetchEvents = async () => {
       const eventsList = await getEvents();
@@ -14,7 +14,7 @@ export default function EventsList() {
     };
 
     fetchEvents();
-  }, []); // Le tableau vide [] assure que l'effet se lance uniquement au montage
+  }, []);
 
   // To delete an event from database
   const handleDelete = (eventId) => {
