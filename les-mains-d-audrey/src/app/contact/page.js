@@ -99,7 +99,7 @@ export default function Contact() {
               06 75 34 08 67
             </a>
           </p>
-          <p>Retrouvez-moi sur les réseaux sociaux:</p>
+          <p>Retrouvez-moi sur les réseaux sociaux :</p>
           <div className="flex flex-row w-72 mt-2 justify-center">
             <Link
               href="https://www.facebook.com/profile.php?id=61558150675264"

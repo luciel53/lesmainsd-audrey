@@ -30,7 +30,7 @@ export default function Home() {
           pour <strong>renforcer le lien entre parents et tout-petits</strong>.
           Avant même de parler, les bébés peuvent{" "}
           <em>exprimer leurs besoins</em> et leurs{" "}
-          <em>émotions</em> ,{" "}
+          <em>émotions</em>,{" "}
           <em>réduisant ainsi les frustrations et favorisant la complicité</em>.
           En tant que <strong>facilitatrice de lien parents-bébé</strong>, je
           vous guide dans cette aventure pour{" "}
