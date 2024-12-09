@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.lesmainsdaudrey44.com
+
+# Sitemaps
+Sitemap: https://www.lesmainsdaudrey44.com/sitemap.xml
