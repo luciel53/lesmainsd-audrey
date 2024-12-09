@@ -93,7 +93,7 @@ individuel"
             title="Ateliers comptines signées"
             p1="De la naissance, voire même dès la grossesse (certains parents préfèrent apprendre les comptines avant l'arrivée de bébé), jusqu'à ce que l'enfant n'aime plus faire des comptines (6-8 ans ou plus)"
             p2="en individuel : 30€"
-            p3="en collectif (3 à 5 familles max): 20€"
+            p3="en collectif (3 à 5 familles max) : 20€"
           />
           <PrestationsCard
             title="Ateliers à thème"

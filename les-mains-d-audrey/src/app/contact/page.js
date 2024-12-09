@@ -82,10 +82,10 @@ export default function Contact() {
           <p>Facilitatrice de liens parents-bébés</p>
           <p>
             <a
-              href="mailto:lesmainsdaudrey44@gmail.com"
+              href="mailto:contact@lesmainsdaudrey44.com"
               className="text-pink hover:underline hover:text-lightPink"
             >
-              lesmainsdaudrey44@gmail.com
+              contact@lesmainsdaudrey44.com
             </a>
           </p>
           <p>Sainte-Anne-sur-Brivet (et alentours)</p>

@@ -22,7 +22,7 @@ export default function LegalMentions() {
             <h3 className=" font-bold mb-1">L&apos;entreprise:</h3>
             <p>Les Mains d&apos;Audrey</p>
             <p>Facilitatrice de liens Parents-enfant</p>
-            <p>Email : lesmainsdaudrey44@gmail.com</p>
+            <p>Email : contact@lesmainsdaudrey44.com</p>
             <p>SMS : 06 75 34 08 67</p>
             <p>
               <strong className="italic">Les mains d&apos;Audrey</strong> est
@@ -39,7 +39,6 @@ export default function LegalMentions() {
             <p>Netlify Inc.</p>
             <p> 512 2nd Street, Fl 2</p>
             <p>San Francisco, CA 94107</p>
-            {/* <p><a href="mailto:lesmainsdaudrey44@gmail.com">privacy@netlify.com</a></p> */}
           </div>
           {/* Directeur de la publication */}
           <div className="flex flex-col mx-5 md:mx-40 lg:mx-32 mb-3 md:mb-5">
