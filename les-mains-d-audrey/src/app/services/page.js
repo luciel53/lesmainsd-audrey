@@ -60,12 +60,12 @@ individuel"
           <PrestationsCard
             title="Ateliers Bébé signe
           en collectif"
-            p1="En collectif - 2 à 4 familles maximum"
+            p1="En collectif - 3 à 5 familles maximum"
             p2="Un cycle de 4 ateliers ou l'un des 4 ateliers au
               choix : journée, activités, environnement et
               émotions de bébé."
             p3="45 minutes"
-            p4="30€ L'UNITÉ - 100€ LE CYCLE"
+            p4="20€ L'UNITÉ - 60€ LE CYCLE"
           />
           <div className="flex flex-col bg-gradient-to-tr from-lightBG via-pink-50 to-veryLightPink border border-lightPink rounded-3xl h-96 lg:h-[450px] lg:w-80 xl:w-96 justify-between mt-1 drop-shadow-md transition-transform duration-200 ease-in-out hover:scale-105 hover:drop-shadow-xl">
             <h2 className="text-center font-italiana font-semibold text-pink w-60 mx-auto text-2xl md:text-3xl mt-4 border-b-2 border-pink pb-2 !important">
@@ -92,13 +92,12 @@ individuel"
           <PrestationsCard
             title="Ateliers comptines signées"
             p1="De la naissance, voire même dès la grossesse (certains parents préfèrent apprendre les comptines avant l'arrivée de bébé), jusqu'à ce que l'enfant n'aime plus faire des comptines (6-8 ans ou plus)"
-            p2="en individuel : 30€"
-            p3="en collectif (3 à 5 familles max) : 20€"
+            p2="En collectif (3 à 5 familles max) : 15€"
           />
           <PrestationsCard
             title="Ateliers à thème"
-            p1="Sur mesure selon les saisons"
-            p2="En collectif (min 3 familles - max 5) : 20€ par famille"
+            p1="Sur mesure selon les saisons (animaux de la ferme, Noël, langue des signes, ...)"
+            p2="En collectif (3 à 5 familles max) : 15€"
           />
           <div className="flex flex-col bg-gradient-to-tr from-lightBG via-pink-50 to-veryLightPink border border-lightPink rounded-3xl h-96 lg:h-[450px] lg:w-80 xl:w-96 justify-between mt-1 drop-shadow-md transition-transform duration-200 ease-in-out hover:scale-105 hover:drop-shadow-xl">
             <h2 className="text-center font-italiana font-semibold text-pink w-60 mx-auto text-2xl md:text-3xl mt-4 border-b-2 border-pink pb-2 !important">
